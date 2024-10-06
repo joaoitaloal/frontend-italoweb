@@ -4,7 +4,7 @@ function NavBar(){
     return(
         <>
             <nav>
-                <Link to='main'>main</Link> <br/>
+                <Link to='home'>main</Link> <br/>
                 <Link to='test'>test</Link>
             </nav>
             <Outlet/>

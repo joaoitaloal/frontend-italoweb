@@ -3,14 +3,16 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import NavBar from './NavBar.tsx';
+import ErrorPage from './components/ErrorPage.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <NavBar/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
-        path: "main",
+        path: "home",
         element: <App/>
       },
       {

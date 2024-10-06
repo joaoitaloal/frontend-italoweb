@@ -1,5 +1,5 @@
 import './App.css'
-import flowerJPEG from '../public/flower.jpeg'
+import flowerJPEG from '/flower.jpeg'
 
 function App() {
 
