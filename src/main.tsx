@@ -1,19 +1,25 @@
 import { StrictMode } from 'react'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import NavBar from './NavBar.tsx';
-import ErrorPage from './components/ErrorPage.tsx';
+import App from './pages/App.tsx'
+import NavBar from './components/NavBar.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import './main.css'
+import Diary from './pages/Diary.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar/>,
+    element: <NavBar />,
     errorElement: <ErrorPage/>,
     children: [
       {
-        path: "home",
-        element: <App/>
+        path: "/",
+        element: <App />
+      },
+      {
+        path: "message",
+        element: <Diary />
       },
       {
         path: "test",

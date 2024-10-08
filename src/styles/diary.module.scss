@@ -1,0 +1,59 @@
+#diary{
+    h1{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: wheat;
+
+        width: 50%;
+        margin: auto;
+        padding: 10px;
+
+        border: 2px solid black;
+        border-radius: 10px;
+
+        label{
+            display: inline-block;
+            margin: auto;
+        }
+        input{
+            width: 30%;
+            margin: auto;
+
+            border: 1px solid black;
+
+            &:focus{
+                border: none;
+            }
+        }
+        button{
+            background-color: white;
+
+            width: 40%;
+            height: 30px;
+            border-radius: 15px;
+
+            margin: 10px auto 0 auto;
+            border: 1px solid black;
+
+            &:hover{
+                background-color: rgb(190, 190, 190);
+            }
+        }
+    }
+    p{
+        text-align: center;
+    }
+}
+
+@keyframes enviar{
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: rgb(221, 221, 221);
+    }
+}
