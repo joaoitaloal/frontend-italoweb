@@ -6,6 +6,7 @@ import NavBar from './components/NavBar.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import './main.css'
 import Diary from './pages/Diary.tsx';
+import Chat from './pages/Chat.tsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "message",
         element: <Diary />
+      },
+      {
+        path: "chat",
+        element: <Chat />
       },
       {
         path: "test",

@@ -11,7 +11,7 @@ function Diary() {
     return {
       method: 'post',
       maxBodyLength: 5000,
-      url: '/post',
+      url: '/diary/messages',
       headers: { 
         'Content-Type': 'application/json'
       },
