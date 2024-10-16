@@ -1,8 +1,67 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from '../styles/chat.module.scss';
+import { socket } from '../lib/socket';
+import axios from 'axios';
+import { getConfig } from '../lib/utils';
+
 function Chat(){
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
+    const [connection, setConnection] = useState(socket.connected)
+    //object array: {name: "name", message: "message"}
+    const [log, setLog] = useState(new Array<{name:string, message:string}>)
+
+    useEffect(() => {
+        socket.connect();
+
+        function onConnect(){
+            setConnection(true)
+        }
+        function onDisconnect(){
+            setConnection(false)
+        }
+
+        console.log('tried to connect!', socket.connected)
+        socket.on('connect', onConnect)
+        socket.on('disconnect', onDisconnect)
+        return () => {
+            socket.off('connect', onConnect)
+            socket.off('disconnect', onDisconnect)
+            socket.disconnect();
+        }
+    },[])
+
+    useEffect(() => {
+        getMessages();
+    },[])
+
+    function Messages(){
+
+
+        return(
+            <div id={style.messages}>
+                {connection?'connected':'not connected'}
+                {log.map((message) => {
+                    return(
+                        <div className={style.message}>
+                            <p>Nome: {message.name}</p>
+                            <p>{message.message}</p>
+                        </div>
+                    )
+                })}
+            </div>
+        );
+    }
+
+    function getMessages(){
+        axios.request(getConfig({ name: name, message: message}, 'get', '/sendchat'))
+        .then((res) => {
+            let data = res.data.map((msg: string) => {
+                return JSON.parse(msg);
+            })
+            setLog([...log].concat(data))
+        })
+    }
 
     function sendMessage(){
         
@@ -16,9 +75,7 @@ function Chat(){
             <label htmlFor="name">Mensagem</label>
             <input type="text" name="message" id="message"  value={message} onChange={(e) => setMessage(e.target.value)}/>
         </form>
-        <div id={style.messages}>
-
-        </div>
+        <Messages/>
     </div>
     )
 }

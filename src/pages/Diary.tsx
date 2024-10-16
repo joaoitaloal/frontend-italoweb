@@ -1,23 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { getConfig } from '../lib/utils'
 import style from '../styles/diary.module.scss'
 
 function Diary() {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
   const [response, setResponse] = useState('Mande uma mensagem')
-
-  function getConfig(data: object | JSON){
-    return {
-      method: 'post',
-      maxBodyLength: 5000,
-      url: '/diary/messages',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : data
-    }
-  }
 
   function formSubmit(e: React.FormEvent){
     e.preventDefault()
