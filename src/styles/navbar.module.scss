@@ -57,6 +57,48 @@
     transform: translate(20%, 20%);
 }
 
+#gamepad{
+    width: 192px;
+    transform: rotate(0.92turn);
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+#guitar{
+    width: 192px;
+
+    position: absolute;
+    top: 70%;
+    left: 3%;
+}
+#ghost{
+    width: 192px;
+    transform: rotate(-0.92turn);
+
+    position: absolute;
+    top: 10%;
+    left: 87%;
+}
+#rghost{
+    width: 192px;
+
+    position: absolute;
+    top: 40%;
+    left: 87%;
+}
+
+#test{
+    background-color: $mindaro;
+
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 240px;
+    left: 50px;
+}
+
 @keyframes show{
     from{
         background-color: $dark-purple;
