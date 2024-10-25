@@ -6,14 +6,22 @@ import guitarImg from '/guitar.png';
 import ghostImg from '/ghost.png';
 import rghostImg from '/realghost.png'
 
-function NavBar() {
-    return (
+function BackgroundImgs(){
+    return(
         <>
             <div id={style.test}></div>
             <img id={style.gamepad} src={gamepadImg} />
             <img id={style.guitar} src={guitarImg} />
             <img id={style.ghost} src={ghostImg} />
             <img id={style.rghost} src={rghostImg} />
+        </>
+    )
+}
+
+function NavBar() {
+    return (
+        <>
+            <BackgroundImgs/>
             <div id={style.window}>
                 <div id={style.navbar}>
                 <img src={catIcon} alt="Icon" />

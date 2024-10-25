@@ -1,18 +1,21 @@
 import { FormEvent, useEffect, useState } from 'react';
 import style from '../styles/chat.module.scss';
 import { socket } from '../lib/socket';
-//import axios from 'axios';
+//import axios from 'axios'; <--- log loading, dont know if i will do that
 //import { getConfig } from '../lib/utils';
 import { msg } from '../lib/interfaces';
 
 function Chat(){
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
+    const [imgIndex, setImgIndex] = useState(0)
     const [connection, setConnection] = useState(socket.connected)
-    //object array: {name: "name", message: "message"}
     const [log, setLog] = useState(new Array<msg>)
 
-    useEffect(() => {
+    useEffect(() => {    
+        /*testing: */
+        setLog([{name: 'italo', message: 'oi', picId: 0},{name: 'teste', message: 'teste', picId: 4},{name: 'italo', message: 'que', picId: 0}])
+
         socket.connect();
 
         function onConnect(){
@@ -36,12 +39,7 @@ function Chat(){
         }
     },[])
 
-    /*useEffect(() => {
-        getMessages();
-    },[])*/
-
     function Messages(){
-
 
         return(
             <div id={style.messages}>
@@ -69,6 +67,16 @@ function Chat(){
         })
     }*/
 
+    function getProfilePic(){
+        switch (imgIndex){
+            case 1: return '/profiles/guy.png'
+            case 2: return '/profiles/charon.png'
+            case 3: return '/profiles/dog.png'
+            case 4: return '/profiles/robot.png'
+        }
+        return '/profiles/cats.png'
+    }
+
     function sendMessage(e: FormEvent){
         e.preventDefault()
         try{
@@ -81,13 +89,26 @@ function Chat(){
 
     return(
     <div id={style.chat}>
-        <form onSubmit={(e) => {sendMessage(e)}}>
+        <div id={style.profile}>
+            <p>Foto de perfil:</p>
+            <img id={style.profilepic} src={getProfilePic()} alt="Foto de perfil" />
+            <select name="pictures" id="pictures" onChange={(e) => {setImgIndex(e.target.selectedIndex)}}>
+                <option value={0}>Gatos</option>
+                <option value={1}>Cara</option>
+                <option value={2}>Caronte</option>
+                <option value={3}>Cachorro?</option>
+                <option value={4}>Robô</option>
+            </select>
             <label htmlFor="name">Nome</label>
             <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
-            <label htmlFor="name">Mensagem</label>
-            <input type="text" name="message" id="message"  value={message} onChange={(e) => setMessage(e.target.value)}/>
-            <button type="submit">Enviar</button>
-        </form>
+        </div>
+        <div id={style.form}>
+            <form onSubmit={(e) => {sendMessage(e)}}>
+                <label htmlFor="name">Mensagem</label>
+                <input type="text" name="message" id="message"  value={message} onChange={(e) => setMessage(e.target.value)}/>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
         <Messages/>
     </div>
     )

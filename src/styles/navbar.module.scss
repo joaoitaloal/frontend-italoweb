@@ -1,4 +1,4 @@
-@import './app.module.scss';
+@use './colors.scss' as colors;
 
 #navbar{
     display: flex;
@@ -6,17 +6,18 @@
     align-items: center;
 
     color: white;
-    background-color: $dark-purple;
+    background-color: colors.$dark-purple;
     padding: 10px;
+    height: 10%;
 
     border-bottom: solid 5px black;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 
     nav{
         margin-left: 10px;
     }
     nav > a{
-        color: white;
+        color: inherit;
 
         border-radius: 5px;
         margin-right: 25px;
@@ -49,11 +50,12 @@
 
 #window{
     background-color: white;
+    background-image: url('/backgroundwindowtile.png');
     border: solid 5px black;
     border-radius: 20px;
 
     width: 70%;
-    height: 70vh;
+    height: 70%;
     transform: translate(20%, 20%);
 }
 
@@ -62,8 +64,8 @@
     transform: rotate(0.92turn);
 
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 5%;
+    left: 3%;
 }
 #guitar{
     width: 192px;
@@ -89,7 +91,7 @@
 }
 
 #test{
-    background-color: $mindaro;
+    background-color: colors.$mindaro;
 
     height: 50px;
     width: 50px;
@@ -101,7 +103,7 @@
 
 @keyframes show{
     from{
-        background-color: $dark-purple;
+        background-color: colors.$dark-purple;
     }
     to{
         background-color: rgba(0, 0, 0, 0.76);

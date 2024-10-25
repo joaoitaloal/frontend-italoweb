@@ -1,5 +1,45 @@
+@use './colors.scss' as colors;
+
 #chat{
     padding: 10px;
+    height: 82%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(3, 33.3%);
+}
+#profile{
+    grid-row: 1 / 2;
+    grid-column: 1;
+    background-color: colors.$mindaro;
+    background-image: linear-gradient(343deg, colors.$fire-red 0%, rgba(251,255,0,0.36876757538953087) 70%);
+
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 3px black;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.295);
+
+    p{
+        display: inline-block;
+        position: relative;
+        top: -10%;
+        margin: 0px;
+    }
+    select{
+        display: inline-block;
+        position: relative;
+    }
+    label{
+        display: block;
+    }
+}
+#profilepic{
+    border: solid 2px black;
+
+    position: relative;
+    left: 70px;
+    top: 10px;
 }
 #messages{
     
