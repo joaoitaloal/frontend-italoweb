@@ -9,11 +9,11 @@ import rghostImg from '/realghost.png'
 function BackgroundImgs(){
     return(
         <>
-            <div id={style.test}></div>
-            <img id={style.gamepad} src={gamepadImg} />
-            <img id={style.guitar} src={guitarImg} />
-            <img id={style.ghost} src={ghostImg} />
-            <img id={style.rghost} src={rghostImg} />
+            {/*<div id={style.test}></div>*/}
+            <img id={style.gamepad} src={gamepadImg} alt="Gamepad pixel art"/>
+            <img id={style.guitar} src={guitarImg} alt="Guitar pixel art"/>
+            <img id={style.ghost} src={ghostImg} alt="Ghost pixel art"/>
+            <img id={style.rghost} src={rghostImg} alt="Ghost pixel art"/>
         </>
     )
 }
