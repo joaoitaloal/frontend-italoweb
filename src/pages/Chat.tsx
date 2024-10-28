@@ -8,11 +8,6 @@ import { msg } from '../lib/interfaces';
 function Chat(){
     let focusQueue = false
 
-
-
-
-
-
     function Messages(){
         const [log, setLog] = useState(new Array<msg>)
         const [connection, setConnection] = useState(socket.connected)
@@ -51,13 +46,6 @@ function Chat(){
             }
         },[])
 
-        /*useEffect(() => {
-            let scroll = document.getElementById(style.messages)
-            scroll?.scrollTo({top: Infinity})
-            if(scroll){
-                scroll.scrollTop = Infinity
-            } 
-        })*/
         function ConnectionStatus(){
             return(
             <div id={style.status}>
@@ -114,6 +102,7 @@ function Chat(){
             }else{
                 try{
                     socket.emit('message', {name: props.name, message: message, picId: props.imgIndex})
+                    setMessage('')
                     focusQueue = true
                 }
                 catch{

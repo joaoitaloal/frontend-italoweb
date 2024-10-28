@@ -36,7 +36,7 @@ function Diary() {
         <input value={message} onChange={(e) => setMessage(e.target.value)} type="text" name="message"/>
         <button type="submit">Enviar</button>
       </form>
-      <p id='response'>{response}</p>
+      <p>{response}</p> <br />
       <p>Não mande nenhuma informação privada como senhas, eu(italo) vou ter acesso as mensagens</p>
     </div>
   )

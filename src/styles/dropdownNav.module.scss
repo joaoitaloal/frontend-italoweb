@@ -1,0 +1,45 @@
+@use './colors.scss' as colors;
+
+.content{    
+    position: relative;
+    left: -2.2em;
+    padding: 5px;
+
+    background-color: black;
+    width: 200%;
+    border-radius: 5px;
+}
+.navItem{
+    position: relative;
+
+    display: block;
+    color: white;
+
+    padding: 5px;
+    border-radius: 5px;
+
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+
+    &:hover{
+        animation: 0.5s linear forwards show;
+        background-color: colors.$dark-purple;
+        cursor: pointer;
+    }
+}
+.separator {
+	height: 1px;
+	background-color: black;
+	margin: 5px;
+}
+
+
+@keyframes show{
+    from{
+        background-color: colors.$chinese-violet;
+    }
+    to{
+        background-color: colors.$dark-purple;
+    }
+}
