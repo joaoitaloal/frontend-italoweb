@@ -15,6 +15,8 @@
     border-radius: 10px 10px 0 0;
 
     nav{
+        display: flex;
+        justify-content: center;
         width: 70%;
         margin-left: 10px;
     }
@@ -34,6 +36,7 @@
     color: inherit;
     background-color: colors.$chinese-violet;
     width: 15%;
+    min-width: 70px;
 
     border-radius: 5px;
     margin-right: 12px;
@@ -60,16 +63,9 @@
     border: solid 5px black;
     border-radius: 20px;
 
-    width: 70%;
+    width: 70vw;
     height: 70%;
     transform: translate(20%, 20%);
-
-    @media (min-width: 1180px){
-        width: 70%;
-    }
-    @media (max-width: 1180px){
-        width: 90vw;
-    }
 }
 
 #gamepad{
@@ -117,6 +113,56 @@
     position: absolute;
     top: 240px;
     left: 50px;
+}
+
+@media (max-width: 1366px){
+    #window{
+        width: 90vw;
+        height: 90%;
+
+        transform: translate(5%, 5%);
+    }
+
+}
+
+@media (max-width: 768px){
+    #window{
+        width: 99vw;
+        height: 90%;
+
+        transform: translate(0%, 5%);
+    }
+    #gamepad{
+        width: 64px;
+        transform: rotate(0.92turn);
+    
+        position: absolute;
+        top: 5%;
+        left: 3%;
+    }
+    #guitar{
+        width: 192px;
+    
+        position: absolute;
+        top: 74%;
+        left: 3%;
+    }
+    #ghost{
+        width: 192px;
+        transform: rotate(0);
+        overflow: hidden;
+    
+        position: absolute;
+        top: 0%;
+        left: 50%;
+    }
+    #rghost{
+        width: 192px;
+    
+        position: absolute;
+        top: 73%;
+        left: 50%;
+    }
 }
 
 @keyframes show{

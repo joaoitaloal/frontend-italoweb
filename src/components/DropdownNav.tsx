@@ -5,28 +5,55 @@ import navbarStyle from "../styles/navbar.module.scss"
 import { Link } from "react-router-dom";
 
 function DropdownNav(){
+	if(!window.matchMedia("(max-width: 1365px)").matches){
+		return (
+			<DropdownMenu.Root>
+				<DropdownMenu.Trigger asChild>
+					<div className={navbarStyle.navItem} aria-label="Outras páginas">
+						<DotsVerticalIcon className={navbarStyle.icon}/>Outros
+					</div>
+				</DropdownMenu.Trigger>
 
-	return (
-		<DropdownMenu.Root>
+				<DropdownMenu.Portal>
+					<DropdownMenu.Content className={style.content} sideOffset={0}>
+						<DropdownMenu.Item>
+							<Link className={style.navItem} to='test'>Sobre</Link>
+						</DropdownMenu.Item>
+					</DropdownMenu.Content>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Root>
+		);
+	}else{
+		return(
+			<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
 				<div className={navbarStyle.navItem} aria-label="Outras páginas">
-                    <DotsVerticalIcon className={navbarStyle.icon}/>Outros
+					Outros
 				</div>
 			</DropdownMenu.Trigger>
 
 			<DropdownMenu.Portal>
 				<DropdownMenu.Content className={style.content} sideOffset={0}>
 					<DropdownMenu.Item>
-                        <Link className={style.navItem} to='chat'>Blog</Link>
+						<Link className={style.navItem} to='message'>Mensagem</Link>
 					</DropdownMenu.Item>
-                    <DropdownMenu.Separator className={style.separator}/>
+					<DropdownMenu.Separator className={style.separator}/>
 					<DropdownMenu.Item>
-                        <Link className={style.navItem} to='test'>Teste</Link> 
+						<Link className={style.navItem} to='chat'>Chat</Link> 
+					</DropdownMenu.Item>
+					<DropdownMenu.Separator className={style.separator}/>
+					<DropdownMenu.Item>
+						<Link className={style.navItem} to='test'>Sobre</Link> 
+					</DropdownMenu.Item>
+					<DropdownMenu.Separator className={style.separator}/>
+					<DropdownMenu.Item>
+						<a className={style.navItem} href='calculator'>Calculadora↗</a>
 					</DropdownMenu.Item>
 				</DropdownMenu.Content>
 			</DropdownMenu.Portal>
 		</DropdownMenu.Root>
-	);
+		)
+	}
 };
 
 export default DropdownNav;

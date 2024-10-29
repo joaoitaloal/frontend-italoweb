@@ -21,32 +21,44 @@ function BackgroundImgs(){
 }
 
 function NavBar() {
-    return (
-        <>
-            <BackgroundImgs/>
+    if(!window.matchMedia("(max-width: 1365px)").matches){
+        return (
+            <>
+                <BackgroundImgs/>
+                <div id={style.window}>
+                    <div id={style.navbar}>
+                    <img src={catIcon} alt="Icon" />
+                        <nav>
+                            <Link className={style.navItem} to='/'><HomeIcon className={style.icon}/>Home</Link>
+                            <Link className={style.navItem} to='message'><EnvelopeClosedIcon className={style.icon}/>Mensagem</Link>
+                            <Link className={style.navItem} to='chat'><ChatBubbleIcon className={style.icon}/>Chat</Link>
+                            <DropdownNav/>
+                            <a className={style.navItem} href='calculator'>Calculadora↗</a>
+                        </nav>
+                        <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
+                    </div>
+                    <Outlet />
+                </div>
+            </>
+        )
+    }else{
+        return(
+            <>
+            {/*<BackgroundImgs/>*/}
             <div id={style.window}>
                 <div id={style.navbar}>
                 <img src={catIcon} alt="Icon" />
                     <nav>
-                        <Link className={style.navItem} to='/'><HomeIcon className={style.icon}/>Home</Link>
-                        <Link className={style.navItem} to='message'><EnvelopeClosedIcon className={style.icon}/>Mensagem</Link>
-                        <Link className={style.navItem} to='chat'><ChatBubbleIcon className={style.icon}/>Chat</Link>
+                        <Link className={style.navItem} to='/'>Home</Link>
                         <DropdownNav/>
-                        {/* <a href="#" className={style.dropdown}><DotsVerticalIcon className={style.icon}/>Outros
-                            <div className={style.dropdownContent}>
-                                <Link to='chat'>Blog</Link>
-                                <Link to='test'>Teste</Link>
-                            </div>
-                        </a>
-                        <Link to='test'>Teste</Link> */}
-                        <a className={style.navItem} href='calculator'>Calculadora↗</a>
                     </nav>
                     <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
                 </div>
                 <Outlet />
             </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default NavBar

@@ -127,15 +127,17 @@ function Chat(){
 
         return(
         <div id={style.profile}>
-            <p>Foto de perfil:</p>
-            <img id={style.profilepic} src={getProfilePic(props.imgIndex)} alt="Foto de perfil" />
-            <select name="pictures" id="pictures" onChange={(e) => {props.setImgIndex(e.target.selectedIndex)}}>
-                <option value={0}>Gatos</option>
-                <option value={1}>Pessoa</option>
-                <option value={2}>Caronte</option>
-                <option value={3}>Cachorro?</option>
-                <option value={4}>Robô</option>
-            </select>
+            <div>
+                <p>Foto de perfil:</p>
+                <img id={style.profilepic} src={getProfilePic(props.imgIndex)} alt="Foto de perfil" />
+                <select name="pictures" id="pictures" onChange={(e) => {props.setImgIndex(e.target.selectedIndex)}}>
+                    <option value={0}>Gatos</option>
+                    <option value={1}>Pessoa</option>
+                    <option value={2}>Caronte</option>
+                    <option value={3}>Cachorro?</option>
+                    <option value={4}>Robô</option>
+                </select>
+            </div>
             <form onSubmit={(e) => {e.preventDefault(); props.setName(nameText)}}>
                 <label htmlFor="name">Nome: {props.name}</label>
                 <input type="text" name="name" id="name" value={nameText} onChange={(e) => setNameText(e.target.value)}/>
