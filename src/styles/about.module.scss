@@ -1,0 +1,85 @@
+@use './colors.scss' as colors;
+
+#about{
+    p,li{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.61);
+        border-radius: 5px;
+        padding: 2px;
+    }
+    h1, h2{
+        color: white;
+        text-align: center;
+        text-shadow: 5px 2px 2px colors.$dark-purple;
+    }
+    h2{
+        margin: 0px auto;
+    }
+    ul{
+        padding-left: 20px;
+
+        li{
+            margin-bottom: 5px;
+        }
+        .done{
+            color: green;
+        }
+        .notdone{
+            color: red;
+        }
+    }
+}
+
+#aboutbox, #devlog, #todo{
+    display: inline-flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-wrap: anywhere;
+    
+    width: 30%;
+    height: 40vh;
+
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+}
+
+#aboutbox{
+    background-color: colors.$mindaro;
+    background-image: radial-gradient(circle, rgba(233,235,135,1) 0%, rgba(202,43,22,1) 100%);
+
+    margin-left: 5vw;
+}
+
+#devlog{
+    background-color: colors.$dark-purple;
+    background-image: radial-gradient(circle, rgba(123,94,123,1) 0%, rgba(28,2,33,1) 100%);
+
+    margin-right: 5vw;
+
+    float: right;
+}
+
+#todo{
+    background-color: colors.$mindaro;
+    background-image: radial-gradient(circle, rgba(202,43,22,1) 0%, rgba(28,2,33,1) 100%);
+
+    margin-left: 5vw;
+}
+
+@media (max-width: '768px'){
+    #aboutbox, #devlog, #todo{
+        width: 35%;
+        height: 60vh;
+    }
+
+    #aboutbox{
+        margin-left: 3px;
+    }
+    #devlog{
+        margin-right: 3px;
+    }
+    #todo{
+        margin-left: 3px;
+    }
+}

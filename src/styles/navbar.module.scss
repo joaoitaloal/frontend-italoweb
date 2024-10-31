@@ -1,6 +1,9 @@
 @use './colors.scss' as colors;
 
 #navbar{
+    position: sticky;
+    top: 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +15,6 @@
     height: 10%;
 
     border-bottom: solid 5px black;
-    border-radius: 10px 10px 0 0;
 
     nav{
         display: flex;
@@ -62,6 +64,9 @@
     background-image: url('/backgroundwindowtile.png');
     border: solid 5px black;
     border-radius: 20px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     width: 70vw;
     height: 70%;
@@ -120,6 +125,9 @@
         width: 90vw;
         height: 90%;
 
+        overflow-x: hidden;
+        overflow-y: scroll;
+
         transform: translate(5%, 5%);
     }
 
@@ -127,8 +135,10 @@
 
 @media (max-width: 768px){
     #window{
-        width: 99vw;
+        width: 97.25vw;
         height: 90%;
+        overflow-x: hidden;
+        overflow-y: scroll;
 
         transform: translate(0%, 5%);
     }

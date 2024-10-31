@@ -1,7 +1,5 @@
 @use './colors.scss' as colors;
 
-//Loaded at '/' so it should only contain classes and ids, because they are used globally
-
 #home{
     padding: 10px;
 

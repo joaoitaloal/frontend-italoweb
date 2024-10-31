@@ -17,7 +17,7 @@ function DropdownNav(){
 				<DropdownMenu.Portal>
 					<DropdownMenu.Content className={style.content} sideOffset={0}>
 						<DropdownMenu.Item>
-							<Link className={style.navItem} to='test'>Sobre</Link>
+							<Link className={style.navItem} to='about'>Sobre</Link>
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Portal>
@@ -43,7 +43,7 @@ function DropdownNav(){
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator className={style.separator}/>
 					<DropdownMenu.Item>
-						<Link className={style.navItem} to='test'>Sobre</Link> 
+						<Link className={style.navItem} to='about'>Sobre</Link> 
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator className={style.separator}/>
 					<DropdownMenu.Item>

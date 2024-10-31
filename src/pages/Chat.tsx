@@ -1,8 +1,6 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import style from '../styles/chat.module.scss';
 import { socket } from '../lib/socket';
-//import axios from 'axios'; <--- log loading, dont know if i will do that
-//import { getConfig } from '../lib/utils';
 import { msg } from '../lib/interfaces';
 
 function Chat(){
@@ -22,6 +20,7 @@ function Chat(){
     
             function onConnect(){
                 setConnection(true)
+                //setLog() <-- set to todays messages, wich will be sent from the server
             }
             function onDisconnect(){
                 setConnection(false)
@@ -63,32 +62,50 @@ function Chat(){
             }
         },[])
 
-        return(
-            <>
-            <div id={style.chatbox}>
-                <div id={style.messages}>
-                    {log.map((message) => {
-                        console.log(log)
-                        return(
-                            <div className={style.message} onLoad={() =>{
-                                //@ts-ignore  look what is the correct type to use here if i have time
-                                scroll.current?.scrollIntoView()
-                            }}>
-                                <img src={getProfilePic(message.picId)} alt="Foto de perfil" />
-                                <div className={style.text}>
-                                    <p className={style.nameText}>{message.name}</p>
-                                    <br />
-                                    <p className={style.messageText}>{message.message}</p>
+        if(log.length !=0){
+            return(
+                <>
+                <div id={style.chatbox}>
+                    <div id={style.messages}>
+                        {log.map((message) => {
+                            return(
+                                <div className={style.message} onLoad={() =>{
+                                    //@ts-ignore  look what is the correct type to use here if i have time
+                                    scroll.current?.scrollIntoView()
+                                }}>
+                                    <img src={getProfilePic(message.picId)} alt="Foto de perfil" />
+                                    <div className={style.text}>
+                                        <p className={style.nameText}>{message.name}</p>
+                                        <br />
+                                        <p className={style.messageText}>{message.message}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-                    <span ref={scroll}></span>
+                            )
+                        })}
+                        <span ref={scroll}></span>
+                    </div>
                 </div>
-            </div>
-            <ConnectionStatus/>
-            </>
-        );
+                <ConnectionStatus/>
+                </>
+            );
+        }else{
+            return(
+                <>
+                <div id={style.chatbox}>
+                    <div id={style.messages}>
+                        <div className={style.message}>
+                        <div className={style.text}>
+                            <p className={style.nameText}>AVISO</p>
+                            <br />
+                            <p className={style.messageText}>Nenhuma mensagem encontrada :(</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <ConnectionStatus/>
+                </>
+            );
+        }
     }
     function MessageForm(props: any){
         const [message, setMessage] = useState('')
@@ -100,8 +117,9 @@ function Chat(){
             }else if(message == ''){
                 window.alert('Insira uma mensagem!')
             }else{
+                let date = new Date;
                 try{
-                    socket.emit('message', {name: props.name, message: message, picId: props.imgIndex})
+                    socket.emit('message', {name: props.name, message: message, picId: props.imgIndex, date: date.toLocaleString('pt-BR')})
                     setMessage('')
                     focusQueue = true
                 }

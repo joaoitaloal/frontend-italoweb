@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import './main.css'
 import Diary from './pages/Diary.tsx';
 import Chat from './pages/Chat.tsx';
+import About from './pages/About.tsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "chat",
         element: <Chat />
+      },
+      {
+        path: "about",
+        element: <About/>
       },
       {
         path: "test",
