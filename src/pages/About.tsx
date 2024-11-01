@@ -15,6 +15,7 @@ function About(){
                     <p>What the hell is happening?? there is some console.logs that are not being called when they clearly should, thats like basic how could a print to console go wrong am i going crazy</p>
                     <p>Okay thats crazy, i dont know what i did but for some reason the devlopment server i am using is connected to the actual server and the logs sent to the devlopment were showing on the actual server. what did i do wrong????????</p>
                     <p>No time to fix this today but the site is running and i know the problem so no worries</p>
+                    <p>My build process is a mess i should really make some automations(is that the word?) to it</p>
                 </div>
                 <div>
                     <h2>30/10/2024</h2>
@@ -158,6 +159,7 @@ function About(){
                 <div id={style.todo}>
                     <h2>Planos</h2>
                     <ul>
+                        <li>Display the names of the users connected to the chat(if they have chosen a name): <span className={style.notdone}>not done</span></li>
                         <li>Make a little 'no messages yet' message for the chat, also make the log of messages from the day: <span className={style.notdone}>half done</span></li>
                         <li>Make an english translation, still need to think how i will do it: <span className={style.notdone}>not done</span></li>
                         <li>About page: <span className={style.done}>done</span></li>
