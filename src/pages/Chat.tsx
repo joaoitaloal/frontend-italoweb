@@ -13,8 +13,8 @@ function Chat(){
         const scroll = useRef(null)
 
         useEffect(() => {    
-            /*testing: 
-            setLog([{name: 'italo', message: 'oi', picId: 0}])*/
+            /*testing: */
+            setLog([{name: 'italo', message: 'oi', picId: 0, date: '02/10/2024'}])
     
             socket.connect();
     

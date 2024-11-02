@@ -158,7 +158,8 @@
 
     grid-column: 2/5;
     grid-row: 1/5;
-
+    
+    scrollbar-width: none;
 }
 #messages{
     display: flex;
@@ -198,6 +199,7 @@
         top: -0.5em;
         display: inline-block;
         margin-left: 5px;
+        padding: 10px;
 
         background-color: inherit;
         
@@ -205,6 +207,7 @@
         max-height: 3em;
         overflow: scroll;
         scrollbar-color: colors.$dark-purple colors.$beaver;
+        scrollbar-width: none;
     }
 }
 #status{

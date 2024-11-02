@@ -9,6 +9,10 @@ function About(){
             return(
                 <>
                 <div>
+                    <h2>02/11/2024</h2>
+                    <p>Just discovered the scrollbar chrome uses is the ugliest thing i ever seen, since i cant customize the scrollbars manually for each browser im gonna just hide them all and hope people understand what you can and cant scroll</p>
+                </div>
+                <div>
                     <h2>31/10/2024</h2>
                     <p>Should have made some halloween pixel art</p>
                     <p>Was not planning to do anything today, just make some logs for yesterday because i did a lot of shit but forgot to write about it but i am having a big problem trying to host the site so troubleshooting night lets go.</p>
