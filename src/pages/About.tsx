@@ -11,6 +11,7 @@ function About(){
                 <div>
                     <h2>03/11/2024</h2>
                     <p>Finished the messages log for chat page, it now loads all messages from the day, looks cool i think. Also now shows the time the message was sent</p>
+                    <p>Changed the chat layout for small screens, i dont really like how it looks and works but it is way better and more usable than before</p>
                 </div>
                 <div>
                     <h2>02/11/2024</h2>
