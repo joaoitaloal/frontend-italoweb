@@ -2,5 +2,6 @@ export interface msg {
     name: string,
     message: string,
     picId: number,
-    date: string
+    date: string,
+    time: string
 }

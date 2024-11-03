@@ -13,17 +13,20 @@ function Chat(){
         const scroll = useRef(null)
 
         useEffect(() => {    
-            /*testing: */
-            setLog([{name: 'italo', message: 'oi', picId: 0, date: '02/10/2024'}])
+            /*testing: 
+            setLog([{name: 'italo', message: 'oi', picId: 0, time: '10:24:30',date: '03/10/2024'}])*/
     
             socket.connect();
     
             function onConnect(){
                 setConnection(true)
-                //setLog() <-- set to todays messages, wich will be sent from the server
             }
             function onDisconnect(){
                 setConnection(false)
+            }
+            function loadLog(data: Array<msg>){
+                if(data.length > 0)
+                    setLog(data);
             }
             function onMessage(data: msg){
                 setLog(prev => [...prev, data])
@@ -34,11 +37,13 @@ function Chat(){
     
             socket.on('connect', onConnect)
             socket.on('disconnect', onDisconnect)
+            socket.on('loadlog', loadLog)
             socket.on('message', onMessage)
             socket.on('userConnected', onUserConnected)
             return () => {
                 socket.off('connect', onConnect)
                 socket.off('disconnect', onDisconnect)
+                socket.off('loadlog', loadLog)
                 socket.off('message', onMessage)
                 socket.off('userConnected', onUserConnected)
                 socket.disconnect();
@@ -75,7 +80,7 @@ function Chat(){
                                 }}>
                                     <img src={getProfilePic(message.picId)} alt="Foto de perfil" />
                                     <div className={style.text}>
-                                        <p className={style.nameText}>{message.name}</p>
+                                        <p className={style.nameText}>{message.name}</p> <p className={style.timeText}>{message.time}</p>
                                         <br />
                                         <p className={style.messageText}>{message.message}</p>
                                     </div>
@@ -119,7 +124,15 @@ function Chat(){
             }else{
                 let date = new Date;
                 try{
-                    socket.emit('message', {name: props.name, message: message, picId: props.imgIndex, date: date.toLocaleString('pt-BR')})
+                    socket.emit('message', 
+                        {
+                            name: props.name,
+                            message: message,
+                            picId: props.imgIndex,
+                            time: date.toLocaleTimeString('pt-BR'),
+                            date: date.toLocaleDateString('pt-BR')
+                        }
+                    )
                     setMessage('')
                     focusQueue = true
                 }
@@ -143,6 +156,13 @@ function Chat(){
     function ProfileForm(props: any){
         const [nameText, setNameText] = useState('')
 
+        function updateName(name: string){
+            if(name.length < 30)
+                props.setName(name)
+            else
+                window.alert('No máximo 30 caracteres')
+        }
+
         return(
         <div id={style.profile}>
             <div>
@@ -156,7 +176,7 @@ function Chat(){
                     <option value={4}>Robô</option>
                 </select>
             </div>
-            <form onSubmit={(e) => {e.preventDefault(); props.setName(nameText)}}>
+            <form onSubmit={(e) => {e.preventDefault(); updateName(nameText)}}>
                 <label htmlFor="name">Nome: {props.name}</label>
                 <input type="text" name="name" id="name" value={nameText} onChange={(e) => setNameText(e.target.value)}/>
                 <button type="submit">Confirmar</button>

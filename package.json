@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --emptyOutDir",
+    "buildev": "tsc -b && vite build --emptyOutDir",
+    "buildprod": "tsc -b && vite build --emptyOutDir --outDir ../italoweb-built/dist/disthomepage",
     "lint": "eslint .",
     "preview": "vite preview"
   },
