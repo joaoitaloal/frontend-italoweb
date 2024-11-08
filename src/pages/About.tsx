@@ -9,6 +9,12 @@ function About(){
             return(
                 <>
                 <div>
+                    <h2>08/11/2024</h2>
+                    <p>Thought about it and im gonna make the blog page a separate thing from the main layout, i think it makes more sense than the customized page i was trying to make, its gonna be kinda boring but the main focus of a blog is the text so i think it is fine</p>
+                    <p>Page done, very basic but i think it will be a better option that will cause me less headaches</p>
+                    <p>Might transfer these devlogs to the blog page later</p>
+                </div>
+                <div>
                     <h2>05/11/2024</h2>
                     <p>Started blog page</p>
                     <p>I think i've been trying to fix a single css problem for like 4 hours god i hate this so much</p>

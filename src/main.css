@@ -2,12 +2,12 @@
     font-family: 'Retro Gaming';
     src: local('/retro-gaming.ttf'), 
     url('/retro-gaming.ttf') format('font/ttf');
-}*/
+}
 
 :root{
     background-color: black;
     background-image: url('/backgroundtile.png');
-}
+}*/
 
 body{
     padding: 0;

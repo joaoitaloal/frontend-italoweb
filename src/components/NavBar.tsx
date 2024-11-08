@@ -1,5 +1,4 @@
 import { Link, Outlet, useOutletContext } from "react-router-dom";
-import '../main.css'
 import style from '../styles/navbar.module.scss';
 import { HomeIcon, ChatBubbleIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import catIcon from '/iconOutlined.png';
@@ -10,6 +9,7 @@ import rghostImg from '/realghost.png'
 import DropdownNav from "./DropdownNav";
 import { useEffect, useState } from "react";
 
+//Remove background
 export function useAcessibility(){
     return useOutletContext<React.Dispatch<React.SetStateAction<boolean>>>()
 }
@@ -37,7 +37,7 @@ function NavBar() {
 
     if(!window.matchMedia("(max-width: 1365px)").matches){
         return (
-            <>
+            <div id={style.mainRoot}>
                 <BackgroundImgs darkbg={darkbg}/>
                 <div id={style.window}>
                     <div id={style.navbar}>
@@ -47,7 +47,7 @@ function NavBar() {
                                 <Link className={style.navItem} to='message'><EnvelopeClosedIcon className={style.icon}/>Mensagem</Link>
                                 <Link className={style.navItem} to='chat'><ChatBubbleIcon className={style.icon}/>Chat</Link>
                                 <DropdownNav/>
-                                <a className={style.navItem} href='calculator'>Calculadora↗</a>
+                                <a className={style.navItem} href='/calculator'>Calculadora↗</a>
                             </nav>
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
                     </div>
@@ -55,23 +55,25 @@ function NavBar() {
                         <Outlet context={setDarkbg satisfies React.Dispatch<React.SetStateAction<boolean>>}/>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }else{
         return(
-            <>
-            <div id={style.window}>
-                <div id={style.navbar}>
-                <img src={catIcon} alt="Icon" />
-                    <nav>
-                        <Link className={style.navItem} to='/'>Home</Link>
-                        <DropdownNav/>
-                    </nav>
-                    <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
+            <div id={style.mainRoot}>
+                <div id={style.window}>
+                    <div id={style.navbar}>
+                    <img src={catIcon} alt="Icon" />
+                        <nav>
+                            <Link className={style.navItem} to='/'>Home</Link>
+                            <DropdownNav/>
+                        </nav>
+                        <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
+                    </div>
+                    <div id={style.scrollableContent}>
+                        <Outlet context={setDarkbg satisfies React.Dispatch<React.SetStateAction<boolean>>}/>
+                    </div>
                 </div>
-                <Outlet />
             </div>
-            </>
         )
     }
 }

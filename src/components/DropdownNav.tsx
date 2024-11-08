@@ -21,7 +21,7 @@ function DropdownNav(){
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator className={style.separator}/>
 						<DropdownMenu.Item>
-							<Link className={style.navItem} to='blog'>Blog</Link>
+							<a className={style.navItem} href="/blog">Blog</a>
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Portal>
@@ -51,12 +51,12 @@ function DropdownNav(){
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator className={style.separator}/>
 					<DropdownMenu.Item>
-						<a className={style.navItem} href='calculator'>Calculadora↗</a>
+						<a className={style.navItem} href='/calculator'>Calculadora↗</a>
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator className={style.separator}/>
 					<DropdownMenu.Item>
-							<Link className={style.navItem} to='blog'>Blog</Link>
-						</DropdownMenu.Item>
+							<a className={style.navItem} href="/blog">Blog</a>
+					</DropdownMenu.Item>
 				</DropdownMenu.Content>
 			</DropdownMenu.Portal>
 		</DropdownMenu.Root>

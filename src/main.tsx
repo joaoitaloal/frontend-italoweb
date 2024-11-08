@@ -8,15 +8,17 @@ import Diary from './pages/Diary.tsx';
 import Chat from './pages/Chat.tsx';
 import About from './pages/About.tsx';
 import Blog from './pages/Blog.tsx';
+import BlogNav from './components/blogNav.tsx';
+import './main.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar />,
     errorElement: <ErrorPage/>,
+    element: <NavBar />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <App />
       },
       {
@@ -32,15 +34,26 @@ const router = createBrowserRouter([
         element: <About/>
       },
       {
-        path: "blog",
-        element: <Blog/>
-      },
-      {
         path: "test",
         element: <h1>test</h1>
       }
     ],
-  },
+  },{
+    path: "/blog",
+    element: <BlogNav/>,
+    children: [
+      {
+        path: "",
+        element: <Blog/>
+      },
+      {
+        path: "dev"
+      },
+      {
+        path: "philosophy"
+      }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById('root')!).render(

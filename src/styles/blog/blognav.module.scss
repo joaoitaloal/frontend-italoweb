@@ -1,0 +1,40 @@
+@use '../colors.scss' as colors;
+
+#blogRoot{
+    height: 100%;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: colors.$dark-purple;
+    color: white;
+
+    height: 8%;
+    padding: 15px;
+
+    nav{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        margin-left: 10px;
+    }
+
+    #footer > a{
+        color: blue;
+        margin-right: 10px;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+}
+
+#blogBody{
+    height: 90%;
+    padding: 15px;
+}
