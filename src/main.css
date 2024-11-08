@@ -4,13 +4,15 @@
     url('/retro-gaming.ttf') format('font/ttf');
 }*/
 
+:root{
+    background-color: black;
+    background-image: url('/backgroundtile.png');
+}
+
 body{
     padding: 0;
     margin: 0;
     height: 100vh;
-
-    background-color: rgb(116, 104, 83);
-    background-image: url('/backgroundtile.png');
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

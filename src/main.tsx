@@ -4,10 +4,10 @@ import { createRoot } from 'react-dom/client'
 import App from './pages/App.tsx'
 import NavBar from './components/NavBar.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
-import './main.css'
 import Diary from './pages/Diary.tsx';
 import Chat from './pages/Chat.tsx';
 import About from './pages/About.tsx';
+import Blog from './pages/Blog.tsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About/>
+      },
+      {
+        path: "blog",
+        element: <Blog/>
       },
       {
         path: "test",

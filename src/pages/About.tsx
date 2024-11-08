@@ -9,6 +9,19 @@ function About(){
             return(
                 <>
                 <div>
+                    <h2>05/11/2024</h2>
+                    <p>Started blog page</p>
+                    <p>I think i've been trying to fix a single css problem for like 4 hours god i hate this so much</p>
+                    <p>Decided to rollback all changes whatever i can do better another day, my brain is fried</p>
+                    <p>Maybe give up on making user options for the blog page</p>
+                </div>
+                <div>
+                    <h2>04/11/2024</h2>
+                    <p>I want to make a "blog" page next, not really a blog probably, just a place where i can put anything that is on my mind, now that i wrote that i think thats exactly what a blog is</p>
+                    <p>When i do make the blog page i think this page will probably be a little less verbose and more like summarys of what changed</p>
+                    <p>Not doing it today though</p>
+                </div>
+                <div>
                     <h2>03/11/2024</h2>
                     <p>Finished the messages log for chat page, it now loads all messages from the day, looks cool i think. Also now shows the time the message was sent</p>
                     <p>Changed the chat layout for small screens, i dont really like how it looks and works but it is way better and more usable than before</p>
@@ -48,7 +61,7 @@ function About(){
                 </div>
                 <div>
                     <h2>28/10/2024</h2>
-                    <p>Did last changes on the chat style, the css is a very messy because of the rollbacks i had to make last time so if i ever need to change this again good luck to me</p>
+                    <p>Did last changes on the chat style, the css is very messy because of the rollbacks i had to make last time so if i ever need to change this again good luck to me</p>
                     <p>Not a big fan of the look of the inputs but its not that bad, the font is also not helping</p>
                     <p>Want to change the navbar before doing another page
                     Done, navbar is looking pretty good now, used a dropdown menu from radix to avoid putting 10 buttons on the screen. The mobile problem is worse now but i will ignore that for as long as i can</p>
@@ -146,49 +159,45 @@ function About(){
     return(
         <div id={style.about}>
             <h1 id={style.title}>Sobre</h1>
-            <div>
-                <div id={style.aboutbox}>
-                    <h2>Sobre</h2>
-                    <p>
-                        Olá! meu nome é Ítalo e esse site é meu site pessoal, vou usar ele pra aprender coisas sobre web e talvez colocar qualquer coisa que eu tiver afim de vez em quando, não espere nada de muito especial nem elaborado, é realmente o que eu quiser quando eu quiser!
-                    </p>
-                    <p>
-                        O site não vai estar sempre funcionando, pelo menos por enquanto. Provavelmente vou manter ele funcionando de noite das 18 as 22 horas, é pouco tempo mas po não tem muita coisa pra ver aqui. 
-                    </p>
-                    <p>
-                        Dito isso, fique a vontade para mandar perguntas ou qualquer coisa na página de mensagens ou qualquer outro lugar que você consiga me encontrar
-                    </p>
-                </div>
-                <div id={style.devlog}>
-                    <h2>Blog[?] do desenvolvimento</h2>
-                    <p>Eu acabei escrevendo bastante coisa enquanto estava desenvolvendo o site, como foi tudo em um .txt e é super fácil transferir pra cá, fiz isso. <br /> Vou tentar continuar atualizando as coisas aqui sempre que eu mexer no site.</p>
-                    <p>Tá tudo em inglês mas eu pretendo traduzir em breve. Tem algumas coisas censuradas por segurança também <br /> Datas no formato DD/MM/YYYY.</p>
-                    <AboutText/>
-                </div>
+            <div id={style.aboutbox}>
+                <h2>Sobre</h2>
+                <p>
+                    Olá! meu nome é Ítalo e esse site é meu site pessoal, vou usar ele pra aprender coisas sobre web e talvez colocar qualquer coisa que eu tiver afim de vez em quando, não espere nada de muito especial nem elaborado, é realmente o que eu quiser quando eu quiser!
+                </p>
+                <p>
+                    O site não vai estar sempre funcionando, pelo menos por enquanto. Provavelmente vou manter ele funcionando de noite das 18 as 22 horas, é pouco tempo mas po não tem muita coisa pra ver aqui. 
+                </p>
+                <p>
+                    Dito isso, fique a vontade para mandar perguntas ou qualquer coisa na página de mensagens ou qualquer outro lugar que você consiga me encontrar
+                </p>
             </div>
-            <div>
-                <div id={style.todo}>
-                    <h2>Planos</h2>
-                    <ul>
-                        <li>Display the names of the users connected to the chat(if they have chosen a name): <span className={style.done}>Thought about it a little more and i will not do it sorry me from the past</span></li>
-                        <li>Make a little 'no messages yet' message for the chat, also make the log of messages from the day: <span className={style.done}>done</span></li>
-                        <li>Make an english translation, still need to think how i will do it: <span className={style.notdone}>not done</span></li>
-                        <li>About page: <span className={style.done}>done</span></li>
-                        <li>Set a schedule: <span className={style.done}>done</span></li>
-                        <li>Make a pong game: <span className={style.notdone}>not done</span></li>
-                        <li>Display how many people connected in the chat: <span className={style.done}>done</span></li>
-                        <li>Learn databases, sql postgres whatever: <span className={style.done}>done?</span></li>
-                        <li>Make a page for devlogs and eventually create a blog page: <span className={style.notdone}>half done</span></li>
-                        <li>Find a font to use: not done, maybe i could customize one but thats a lot of work: <span className={style.notdone}>not done</span></li>
-                        <li>Make random pixel art to populate the background[?]: <span className={style.done}>done</span></li>
-                        <li>Change the green color: <span className={style.done}>done, its red now</span></li>
-                        <li>Fix background art causing side scrolling on small screens, to be honest thats a gigantic 
-                        problem, i would need to think and adapt the entire site to mobile to fix it and i am 
-                        absolutely not doing that atleast for now, so: not done probably forever: <span className={style.done}>done lets gooo</span></li>
-                        <li>There is probably a way for me to send different files if the client is a mobile device, 	
-                        that could be useful i think, should look into it: <span className={style.done}>not a priority, marking as done</span></li>
-                    </ul>
-                </div>
+            <div id={style.devlog}>
+                <h2>Blog[?] do desenvolvimento</h2>
+                <p>Eu acabei escrevendo bastante coisa enquanto estava desenvolvendo o site, como foi tudo em um .txt e é super fácil transferir pra cá, fiz isso. <br /> Vou tentar continuar atualizando as coisas aqui sempre que eu mexer no site.</p>
+                <p>Tá tudo em inglês mas eu pretendo traduzir em breve. Tem algumas coisas censuradas por segurança também <br /> Datas no formato DD/MM/YYYY.</p>
+                <AboutText/>
+            </div>
+            <div id={style.todo}>
+                <h2>Planos</h2>
+                <ul>
+                    <li>Display the names of the users connected to the chat(if they have chosen a name): <span className={style.done}>Thought about it a little more and i will not do it sorry me from the past</span></li>
+                    <li>Make a little 'no messages yet' message for the chat, also make the log of messages from the day: <span className={style.done}>done</span></li>
+                    <li>Make an english translation, still need to think how i will do it: <span className={style.notdone}>not done</span></li>
+                    <li>About page: <span className={style.done}>done</span></li>
+                    <li>Set a schedule: <span className={style.done}>done</span></li>
+                    <li>Make a pong game: <span className={style.notdone}>not done</span></li>
+                    <li>Display how many people connected in the chat: <span className={style.done}>done</span></li>
+                    <li>Learn databases, sql postgres whatever: <span className={style.done}>done?</span></li>
+                    <li>Make a page for devlogs and eventually create a blog page: <span className={style.notdone}>half done</span></li>
+                    <li>Find a font to use: not done, maybe i could customize one but thats a lot of work: <span className={style.notdone}>not done</span></li>
+                    <li>Make random pixel art to populate the background[?]: <span className={style.done}>done</span></li>
+                    <li>Change the green color: <span className={style.done}>done, its red now</span></li>
+                    <li>Fix background art causing side scrolling on small screens, to be honest thats a gigantic 
+                    problem, i would need to think and adapt the entire site to mobile to fix it and i am 
+                    absolutely not doing that atleast for now, so: not done probably forever: <span className={style.done}>done lets gooo</span></li>
+                    <li>There is probably a way for me to send different files if the client is a mobile device, 	
+                    that could be useful i think, should look into it: <span className={style.done}>not a priority, marking as done</span></li>
+                </ul>
             </div>
         </div>
     )
