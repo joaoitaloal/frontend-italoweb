@@ -22,19 +22,26 @@
         margin-left: 10px;
     }
 
-    #footer > a{
+}
+
+#blogBody{
+    height: calc(89% - 30px); //intended size - 2 times navbar padding
+    overflow-y: hidden;
+}
+
+#footer{
+    height: 3%;
+    text-align: center;
+    background-color: black;
+    color: white;
+
+    a{
         color: blue;
         margin-right: 10px;
         text-decoration: none;
-
+    
         &:hover{
             text-decoration: underline;
         }
     }
-
-}
-
-#blogBody{
-    height: 90%;
-    padding: 15px;
 }

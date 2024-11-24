@@ -1,67 +1,54 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { DotsVerticalIcon } from "@radix-ui/react-icons";
 import style from "../styles/dropdownNav.module.scss";
 import navbarStyle from "../styles/navbar.module.scss"
 import { Link } from "react-router-dom";
+import { NavLink } from "../lib/interfaces";
 
-function DropdownNav(){
-	if(!window.matchMedia("(max-width: 1365px)").matches){
-		return (
-			<DropdownMenu.Root>
-				<DropdownMenu.Trigger asChild>
-					<div className={navbarStyle.navItem} aria-label="Outras páginas">
-						<DotsVerticalIcon className={navbarStyle.icon}/>Outros
-					</div>
-				</DropdownMenu.Trigger>
+interface DropdownNavProps{
+	itens: Array<NavLink>
+}
 
-				<DropdownMenu.Portal>
-					<DropdownMenu.Content className={style.content} sideOffset={0}>
-						<DropdownMenu.Item>
-							<Link className={style.navItem} to='about'>Sobre</Link>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator className={style.separator}/>
-						<DropdownMenu.Item>
-							<a className={style.navItem} href="/blog">Blog</a>
-						</DropdownMenu.Item>
-					</DropdownMenu.Content>
-				</DropdownMenu.Portal>
-			</DropdownMenu.Root>
-		);
-	}else{
-		return(
-			<DropdownMenu.Root>
-			<DropdownMenu.Trigger asChild>
+function DropdownNav(props: DropdownNavProps){
+	
+	/*function TriggerDiv(){
+		if(window.matchMedia("(max-width: 1365px)").matches){
+			return(
 				<div className={navbarStyle.navItem} aria-label="Outras páginas">
 					Outros
 				</div>
-			</DropdownMenu.Trigger>
-
-			<DropdownMenu.Portal>
-				<DropdownMenu.Content className={style.content} sideOffset={0}>
-					<DropdownMenu.Item>
-						<Link className={style.navItem} to='message'>Mensagem</Link>
-					</DropdownMenu.Item>
-					<DropdownMenu.Separator className={style.separator}/>
-					<DropdownMenu.Item>
-						<Link className={style.navItem} to='chat'>Chat</Link> 
-					</DropdownMenu.Item>
-					<DropdownMenu.Separator className={style.separator}/>
-					<DropdownMenu.Item>
-						<Link className={style.navItem} to='about'>Sobre</Link> 
-					</DropdownMenu.Item>
-					<DropdownMenu.Separator className={style.separator}/>
-					<DropdownMenu.Item>
-						<a className={style.navItem} href='/calculator'>Calculadora↗</a>
-					</DropdownMenu.Item>
-					<DropdownMenu.Separator className={style.separator}/>
-					<DropdownMenu.Item>
-							<a className={style.navItem} href="/blog">Blog</a>
-					</DropdownMenu.Item>
-				</DropdownMenu.Content>
-			</DropdownMenu.Portal>
-		</DropdownMenu.Root>
+			)
+		}
+		return(
+			<div className={navbarStyle.navItem} aria-label="Outras páginas">
+				<DotsVerticalIcon className={navbarStyle.icon}/>Outros
+			</div>
 		)
-	}
+	}*/
+
+	return(
+		<DropdownMenu.Root>
+		<DropdownMenu.Trigger asChild>
+			<div className={navbarStyle.navItem} aria-label="Outras páginas">
+				Outros
+			</div>
+		</DropdownMenu.Trigger>
+
+		<DropdownMenu.Portal>
+			<DropdownMenu.Content className={style.content} sideOffset={0}>
+				{props.itens.map((item: NavLink) => {
+					return(
+						<span key={item.name}>
+						<DropdownMenu.Item>
+							<Link className={style.navItem} to={item.link}>{item.name}</Link>
+						</DropdownMenu.Item>
+						<DropdownMenu.Separator className={style.separator}/>
+						</span>
+					)
+				})}
+			</DropdownMenu.Content>
+		</DropdownMenu.Portal>
+		</DropdownMenu.Root>
+	)
 };
 
 export default DropdownNav;

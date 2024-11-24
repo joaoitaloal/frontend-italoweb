@@ -5,3 +5,8 @@ export interface msg {
     date: string,
     time: string
 }
+
+export interface NavLink{
+    name: string,
+    link: string
+}

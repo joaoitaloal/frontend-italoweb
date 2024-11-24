@@ -1,9 +1,19 @@
 //By default the window should be kinda lightmode
 #blog{
     height: 100%;
+    width: 50%;
+    
+    margin: auto;
+    padding: 10px;
+
+    background-color: rgba(128, 128, 128, 0.082);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.397);
+
+    overflow-y: scroll;
 
     h1{
         margin: 0 auto;
     }
-
+    
+    scrollbar-gutter: stable;
 }

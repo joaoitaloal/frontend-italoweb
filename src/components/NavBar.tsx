@@ -8,6 +8,7 @@ import ghostImg from '/ghost.png';
 import rghostImg from '/realghost.png'
 import DropdownNav from "./DropdownNav";
 import { useEffect, useState } from "react";
+import { NavLink } from "../lib/interfaces";
 
 //Remove background
 export function useAcessibility(){
@@ -41,12 +42,12 @@ function NavBar() {
                 <BackgroundImgs darkbg={darkbg}/>
                 <div id={style.window}>
                     <div id={style.navbar}>
-                        <img src={catIcon} alt="Icon" />
+                        <Link to='/'><img src={catIcon} alt="Icon" /></Link>
                             <nav>
                                 <Link className={style.navItem} to='/'><HomeIcon className={style.icon}/>Home</Link>
                                 <Link className={style.navItem} to='message'><EnvelopeClosedIcon className={style.icon}/>Mensagem</Link>
                                 <Link className={style.navItem} to='chat'><ChatBubbleIcon className={style.icon}/>Chat</Link>
-                                <DropdownNav/>
+                                <DropdownNav itens={[{name: "Sobre", link: "about"}, {name:"Blog", link: "/blog"}] satisfies NavLink[]}/>
                                 <a className={style.navItem} href='/calculator'>Calculadora↗</a>
                             </nav>
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
@@ -62,10 +63,16 @@ function NavBar() {
             <div id={style.mainRoot}>
                 <div id={style.window}>
                     <div id={style.navbar}>
-                    <img src={catIcon} alt="Icon" />
+                    <Link to='/'><img src={catIcon} alt="Icon" /></Link>
                         <nav>
                             <Link className={style.navItem} to='/'>Home</Link>
-                            <DropdownNav/>
+                            <DropdownNav itens={[
+                                {name: "Mensagem", link: "message"},
+                                {name: "Chat", link: "chat"},
+                                {name: "Sobre", link: "about"},
+                                {name:"Blog", link: "/blog"},
+                                {name: "Calculadora", link: "/calculator"}
+                                ] satisfies NavLink[]}/>
                         </nav>
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
                     </div>
