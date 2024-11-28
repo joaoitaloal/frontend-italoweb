@@ -9,6 +9,16 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>27/11/2024</h2>
+                    <p>Possible libraries for the game: <br />
+                        PixiJS: Very simple and powerful. I might use this since it is a simple game and i want to focus more on the server and multiplayer part of the idea <br />
+                        Planck.js: A physics only engine, it is a rigid body engine so it looks a lot like Unity, but 2D i think. I would need to implement the drawing method still, and it seems more complicated overall so im saving this here just in case i have more time and interest to take a better look at it some other time.</p>
+                    <p>I went with PixiJS but it doubled the size of the js minified file, i need to see if i can change some options to make this better</p>
+                    <p>So PixiJS is indeed very simple to use, had little time today but im pretty sure the game part is not going to take much time to make. im pretty excited to see what i can do when connecting this to the server, hope the lag is not too crazy.</p>
+                    <p>The original idea was putting the game on the chat page, im not sure if im going with that idea since the game will not have much space, but i need to think about it still.</p>
+                    <p>If you happen to stumble upon this text around 27/11 you can see my testing on <a href='/test'>italowebhome.xyz/test</a></p>
+                </div>
+                <div>
                     <h2>24/11/2024</h2>
                     <p>Sheesh thats a lot of time</p>
                     <p>Made some layout changes for the blog page, i like how it turned out, its very functional i think</p>

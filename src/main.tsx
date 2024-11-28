@@ -13,6 +13,7 @@ import Philosophy from './pages/Blog/Philosophy.tsx';
 import BlogNav from './components/blogNav.tsx';
 import './main.css'
 import Venting from './pages/Blog/Venting.tsx';
+import PongGame from './components/PongGame.tsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "test",
-        element: <h1>test</h1>
+        element: <PongGame/>
       }
     ],
   },{
