@@ -1,70 +1,91 @@
 import { Application, Sprite, Texture } from 'pixi.js';
 import { useEffect } from 'react';
 import style from '../styles/pongGame.module.scss';
+import { Socket } from 'socket.io-client';
+import { PongInfo } from '../lib/interfaces';
 
-function PongGame(){
+interface pongGameProps {
+    socket: Socket;
+}
+
+function PongGame(props: pongGameProps){
     const app = new Application();
+    let socket = props.socket;
+    let keys = new Set(["ArrowUp", "ArrowDown", "w", "s"]);
+
+    const PlayerRed = new Sprite(Texture.WHITE);
+    const PlayerBlue = new Sprite(Texture.WHITE); 
+    //const ball = new Sprite();
 
     function initGame(){
         //Setting the scene
-        const squareB = new Sprite(Texture.WHITE);
-        squareB.height = 200;
-        squareB.width = 30;
-        squareB.tint = 0xff0000;
+        let gameWidth = app.canvas.width;
+        let gameHeight = app.canvas.height;
 
-        squareB.x = app.canvas.width / 8;
-        squareB.y = app.canvas.height / 2;
-    
-        squareB.anchor.x = 0.5;
-        squareB.anchor.y = 0.5;
-    
-        app.stage.addChild(squareB);
+        PlayerRed.height = gameHeight/2;
+        PlayerRed.width = 15;
+        PlayerRed.tint = 0xff0000;
 
-        const squareA = new Sprite(Texture.WHITE);
-        squareA.height = 200;
-        squareA.width = 30;
-        squareA.tint = 0x0000ff;
-
-        squareA.x = 7*app.canvas.width / 8;
-        squareA.y = app.canvas.height / 2;
+        PlayerRed.x = gameWidth / 8;
+        PlayerRed.y = gameHeight / 2;
     
-        squareA.anchor.x = 0.5;
-        squareA.anchor.y = 0.5;
+        PlayerRed.anchor.x = 0.5;
+        PlayerRed.anchor.y = 0.5;
     
-        app.stage.addChild(squareA);
-        
-        //Input handling
-        const keys = new Set<string>();
-        window.addEventListener("keydown", (e) =>{ //should i manually remove these event listeners when the component unmounts?
-            keys.add(e.key)
-        })
-        window.addEventListener("keyup", (e) =>{
-            keys.delete(e.key)
-        })
+        app.stage.addChild(PlayerRed);
 
-        //"Physics" process
-        app.ticker.add(() => {
-            if(keys.has("ArrowUp") || keys.has("w")){
-                squareA.y-=4;
-            }
-            if(keys.has("ArrowDown") || keys.has("s")){
-                squareA.y+=4;
-            }
-        });
+        PlayerBlue.height = gameHeight/2;
+        PlayerBlue.width = 15;
+        PlayerBlue.tint = 0x0000ff;
+
+        PlayerBlue.x = 7*gameWidth / 8;
+        PlayerBlue.y = gameHeight / 2;
+    
+        PlayerBlue.anchor.x = 0.5;
+        PlayerBlue.anchor.y = 0.5;
+    
+        app.stage.addChild(PlayerBlue);
     }
 
+    //If everything is correct this is the same socket and connection as the chat page
     useEffect(() => {
-        let gameDiv = document.getElementById("Game");
+        function updateGame(info: PongInfo){
+            app.ticker.addOnce(() => {
+                PlayerBlue.y = info.playerBlueY;
+                PlayerRed.y = info.playerRedY;
+            })
+        }
+        
+        function handleKeyDown(e: KeyboardEvent){
+            if(keys.has(e.key))
+                socket.emit('keydown', e.key);
+        }
+        function handleKeyUp(e: KeyboardEvent){
+            if(keys.has(e.key))
+                socket.emit('keyup', e.key);
+        }
 
-        if(gameDiv)
-            app.init({background: '#111', resizeTo: gameDiv}).then(initGame).then(() =>{
-                gameDiv.appendChild(app.canvas);
-            });
+        app.init({background: '#111', width: 400, height: 180}).then(initGame).then(() =>{
+            document.getElementById("Pong")?.appendChild(app.canvas);
+        }).then(() =>{
+            socket.on('tick', updateGame);
+
+            //these will only be added if the user is playing
+            window.addEventListener("keydown", handleKeyDown)
+            window.addEventListener("keyup", handleKeyUp)
+        })
+
+        return () => {
+            socket.emit('keyup', "all");
+            socket.off('tick', updateGame);
+            window.removeEventListener("keydown", handleKeyDown)
+            window.removeEventListener("keyup", handleKeyUp)
+        }
     },[])
 
     return(
         <>        
-            <div id="Game" className={style.pong}>
+            <div id="Pong" className={style.pong}>
             </div>
         </>
     )    

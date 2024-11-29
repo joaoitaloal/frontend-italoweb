@@ -9,6 +9,12 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>29/11/2024</h2>
+                    <p>Hell yeah never been more happy with my code working, basically made the part of connecting the server and the client, midway throught i thought it would not work but i am very happy it worked. The lag on the local testing is not that bad, i think it will be playable at least when i test it online</p>
+                    <p>Summary of what i changed: the game is now fixed at 400x180px for future mobile compatibility, the inputs and rendering are handled by the client(the browser), the inputs are sent to the server and the server sends a signal to the client every 15milliseconds that the client uses to update the game being rendered</p>
+                    <p>Now i need to do the part of game physics on the server, i hope it is going to be easy, maybe the ball collision with the players will be hard since i am going to have to do it from scratch but whatever its gonna be fun to do</p>
+                </div>
+                <div>
                     <h2>27/11/2024</h2>
                     <p>Possible libraries for the game: <br />
                         PixiJS: Very simple and powerful. I might use this since it is a simple game and i want to focus more on the server and multiplayer part of the idea <br />

@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import style from '../styles/chat.module.scss';
 import { socket } from '../lib/socket';
 import { msg } from '../lib/interfaces';
+import PongGame from '../components/PongGame';
 
 function Chat(){
     let focusQueue = false
@@ -12,7 +13,7 @@ function Chat(){
         const [connectedUsers, setConnectedUsers] = useState(0);
         const scroll = useRef(null)
 
-        useEffect(() => {    
+        useEffect(() => {
             /*testing: 
             setLog([{name: 'teste', message: 'teste', picId: 0, time: '99:99:99',date: '03/10/2024'}])*/
     
@@ -211,6 +212,9 @@ function Chat(){
     <div id={style.chat}>
         <Forms/>
         <Messages/>
+        <div id={style.game}>
+            <PongGame socket={socket}/>
+        </div>
     </div>
     )
 }
