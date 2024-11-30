@@ -15,9 +15,7 @@ export interface NavLink{
 export interface PongInfo{
     playerRedY: number,
     playerBlueY: number,
-    /*
-    ballY: number,
     ballX: number,
-    scoreboard: String,
-    */
+    ballY: number,
+    scoreboard: String
 }

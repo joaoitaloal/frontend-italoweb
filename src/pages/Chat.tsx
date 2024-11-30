@@ -198,6 +198,67 @@ function Chat(){
         )
     }
 
+    function PongWrapper(){
+        const [team, setTeam] = useState("NONE");
+
+        function GameForm(){
+            const [gameWarning, setGameWarning] = useState("");
+
+            function changeTeam(change: string){
+                if(change == "NONE" && team != "NONE"){
+                    socket.emit('freeTeam', team);
+                }else if(change != "NONE" && team == "NONE"){
+                    socket.emit('enterTeam', change);
+                }else if(change != "NONE" && team != "NONE"){
+                    setGameWarning("Saia do seu time antes");
+                }
+            }
+
+            useEffect(() =>{
+                function freeTeam(){
+                    setTeam("NONE");
+                }
+                function enterTeam(change: string){
+                    setTeam(change);
+                }
+                function warning(warning: string){
+                    setGameWarning(warning);
+                }
+
+                socket.on('freeTeam', freeTeam)
+                socket.on('enterTeam', enterTeam)
+                socket.on('pongWarning', warning);
+
+                return () =>{
+                    socket.off('freeTeam', freeTeam);
+                    socket.off('enterTeam', enterTeam);
+                    socket.off('pongWarning', warning);
+                }
+            },[])
+
+            return(
+                <div id={style.gameForm}>
+                    <h2>Entre no jogo</h2>
+                    <input type="button" value="Vermelho" onClick={() => changeTeam("RED")}/>
+                    <input id={style.btAzul} type="button" value="Azul" onClick={() => changeTeam("BLUE")}/> <br />
+                    <input type="button" value="Sair" onClick={() => changeTeam("NONE")}/>
+                    
+                    <p>Time atual: {team}</p>
+                    <p>{gameWarning}</p>
+                </div>
+            )
+        }
+
+        return(
+            <>
+                <GameForm/>
+                <div id={style.game}>
+                    <PongGame socket={socket} team={team}/>
+                </div>
+            </>
+        )
+    }
+
     function getProfilePic(imgIndex: number){
         switch (imgIndex){
             case 1: return '/profiles/guy.png'
@@ -212,9 +273,7 @@ function Chat(){
     <div id={style.chat}>
         <Forms/>
         <Messages/>
-        <div id={style.game}>
-            <PongGame socket={socket}/>
-        </div>
+        <PongWrapper/>
     </div>
     )
 }

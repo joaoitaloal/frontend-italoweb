@@ -9,10 +9,18 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>30/11/2024</h2>
+                    <p>Made the system to choose your player and not being able to use a player that is already in use</p>
+                    <p>Finished the client side rendering part, now i only need to finish the server side physics</p>
+                    <p>In the little test i did there are some weird slowdowns, i am pretty sure this is because the server is not really sending the updates at regular intervals, i will probably need to manually calculate and implement a deltatime to fix this</p>
+                </div>
+                <div>
                     <h2>29/11/2024</h2>
                     <p>Hell yeah never been more happy with my code working, basically made the part of connecting the server and the client, midway throught i thought it would not work but i am very happy it worked. The lag on the local testing is not that bad, i think it will be playable at least when i test it online</p>
                     <p>Summary of what i changed: the game is now fixed at 400x180px for future mobile compatibility, the inputs and rendering are handled by the client(the browser), the inputs are sent to the server and the server sends a signal to the client every 15milliseconds that the client uses to update the game being rendered</p>
                     <p>Now i need to do the part of game physics on the server, i hope it is going to be easy, maybe the ball collision with the players will be hard since i am going to have to do it from scratch but whatever its gonna be fun to do</p>
+                    <p>Having tested it online: the lag is visible but whatever it happens nobody is perfect nor my game</p>
+                    <p>Ok there is a very bad bug happening when somebody sends a message for the first time: the screen shakes very fast, i dont know why it is happening and thats a hazard for epilepsy i think so i need to fix that</p>
                 </div>
                 <div>
                     <h2>27/11/2024</h2>
@@ -22,7 +30,7 @@ function Devlogs(){
                     <p>I went with PixiJS but it doubled the size of the js minified file, i need to see if i can change some options to make this better</p>
                     <p>So PixiJS is indeed very simple to use, had little time today but im pretty sure the game part is not going to take much time to make. im pretty excited to see what i can do when connecting this to the server, hope the lag is not too crazy.</p>
                     <p>The original idea was putting the game on the chat page, im not sure if im going with that idea since the game will not have much space, but i need to think about it still.</p>
-                    <p>If you happen to stumble upon this text around 27/11 you can see my testing on <a href='/test'>italowebhome.xyz/test</a></p>
+                    <p>If you happen to stumble upon this text around 27/11 you can see my testing on <a href='/chat'>italowebhome.xyz/chat</a></p>
                 </div>
                 <div>
                     <h2>24/11/2024</h2>
