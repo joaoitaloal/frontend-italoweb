@@ -9,6 +9,12 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>02/11/2024</h2>
+                    <p>Finished tracking collisions, there are some bugs but its a simple game i dont want to make crazy acurate collision checks</p>
+                    <p>Also made the deltaTime</p>
+                    <p>I like how it turned out a lot, still need to make touch controls for mobile thought</p>
+                </div>
+                <div>
                     <h2>30/11/2024</h2>
                     <p>Made the system to choose your player and not being able to use a player that is already in use</p>
                     <p>Finished the client side rendering part, now i only need to finish the server side physics</p>

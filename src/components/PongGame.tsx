@@ -16,11 +16,12 @@ function PongGame(props: pongGameProps){
 
     const PlayerRed = new Sprite(Texture.WHITE);
     const PlayerBlue = new Sprite(Texture.WHITE);
-    const Ball = new Graphics().circle(400/2, 180/2, 8);
+    const Ball = new Graphics().circle(400/2, 180/2, 5);
     const Scoreboard = new Text({text: "0x0", style: {fill: 0xffffff}}); 
+    //const touchHitbox = new Polygon(0,0, 0,180, 400,180, 400,0);
 
     function initGame(){
-        //Setting the scene
+        
         let gameWidth = app.canvas.width;
         let gameHeight = app.canvas.height;
 
@@ -28,8 +29,8 @@ function PongGame(props: pongGameProps){
         Scoreboard.y = 0;
         app.stage.addChild(Scoreboard);
 
-        PlayerRed.height = gameHeight/4;
-        PlayerRed.width = 6;
+        PlayerRed.height = 40;
+        PlayerRed.width = 10;
         PlayerRed.tint = 0xff0000;
 
         PlayerRed.x = gameWidth / 8;
@@ -40,8 +41,8 @@ function PongGame(props: pongGameProps){
     
         app.stage.addChild(PlayerRed);
 
-        PlayerBlue.height = gameHeight/4;
-        PlayerBlue.width = 6;
+        PlayerBlue.height = 40;
+        PlayerBlue.width = 10;
         PlayerBlue.tint = 0x0000ff;
 
         PlayerBlue.x = 7*gameWidth / 8;
@@ -82,7 +83,6 @@ function PongGame(props: pongGameProps){
         }).then(() =>{
             socket.on('tick', updateGame);
 
-            //these will only be added if the user is playing
             window.addEventListener("keydown", handleKeyDown)
             window.addEventListener("keyup", handleKeyUp)
         })
