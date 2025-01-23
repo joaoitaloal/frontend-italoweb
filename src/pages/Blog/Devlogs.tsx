@@ -9,6 +9,15 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>02/01/2025</h2>
+                    <p>2025!! There is a clear lack of anything from me here, that is because i spent a long time doing things for college and have not worked on any personal project for some time, but i started one and want to put some things about it here.</p>
+                    <p>The project is a 3D renderer/raytracer, you can check it on <a href="https://github.com/joaoitaloal/3DRenderer">my github</a>, it is currently made using SDL2(probably gonna change it to SDL3), check the readme for more details since thats not what im here for.</p>
+                    <p>Im here to complaim about coding using C, man, memory and pointers are very hard to use, one of the first version of the program straight up crashed my pc like 3 times just from memory leaks. Fixing it was very fun though, learned how to use valgrind for that and yeah very pleasant when you understand what is happening</p>
+                    <p>Now i am having a big problem with strings, i am trying to parse some information from the command line arguments and like to make a simple split function you need to make a 50 lines dedicated function it is crazy. Maybe im just too used to javascript and json parsing.</p>
+                    <p>Having said that, the renderer itself was very fun to code, honestly think it is a good project to exercise and learn a little bit about computer graphics.</p>
+                    <p>Writing this i am noticing that my english is getting worse, and it was never very good so thats a problem, but whatever.</p>
+                </div>
+                <div>
                     <h2>02/11/2024</h2>
                     <p>Finished tracking collisions, there are some bugs but its a simple game i dont want to make crazy acurate collision checks</p>
                     <p>Also made the deltaTime</p>
@@ -16,7 +25,7 @@ function Devlogs(){
                 </div>
                 <div>
                     <h2>30/11/2024</h2>
-                    <p>Made the system to choose your player and not being able to use a player that is already in use</p>
+                    <p>Made the system to choose your player and to not be able to use a player that is already in use</p>
                     <p>Finished the client side rendering part, now i only need to finish the server side physics</p>
                     <p>In the little test i did there are some weird slowdowns, i am pretty sure this is because the server is not really sending the updates at regular intervals, i will probably need to manually calculate and implement a deltatime to fix this</p>
                 </div>
@@ -25,7 +34,7 @@ function Devlogs(){
                     <p>Hell yeah never been more happy with my code working, basically made the part of connecting the server and the client, midway throught i thought it would not work but i am very happy it worked. The lag on the local testing is not that bad, i think it will be playable at least when i test it online</p>
                     <p>Summary of what i changed: the game is now fixed at 400x180px for future mobile compatibility, the inputs and rendering are handled by the client(the browser), the inputs are sent to the server and the server sends a signal to the client every 15milliseconds that the client uses to update the game being rendered</p>
                     <p>Now i need to do the part of game physics on the server, i hope it is going to be easy, maybe the ball collision with the players will be hard since i am going to have to do it from scratch but whatever its gonna be fun to do</p>
-                    <p>Having tested it online: the lag is visible but whatever it happens nobody is perfect nor my game</p>
+                    <p>Having tested it online: the lag is visible but whatever, it happens, nobody is perfect nor my game</p>
                     <p>Ok there is a very bad bug happening when somebody sends a message for the first time: the screen shakes very fast, i dont know why it is happening and thats a hazard for epilepsy i think so i need to fix that</p>
                 </div>
                 <div>
@@ -105,12 +114,12 @@ function Devlogs(){
                     <h2>28/10/2024</h2>
                     <p>Did last changes on the chat style, the css is very messy because of the rollbacks i had to make last time so if i ever need to change this again good luck to me</p>
                     <p>Not a big fan of the look of the inputs but its not that bad, the font is also not helping</p>
-                    <p>Want to change the navbar before doing another page
+                    <p>Want to change the navbar before doing another page.
                     Done, navbar is looking pretty good now, used a dropdown menu from radix to avoid putting 10 buttons on the screen. The mobile problem is worse now but i will ignore that for as long as i can</p>
                 </div>
                 <div>
                     <h2>26/10/2024</h2>
-                    <p>Finished the chat page finnaly, i like a lot how it turned out, theres no space for the game thing right now so it will really be another project, maybe another page
+                    <p>Finished the chat page finnaly, i like a lot how it turned out, theres no space for the game thing right now so it will really be another project, maybe another page.
                     Really like how it turned out visually and functionally, very proud</p>
                     <p>The focus on the message input doesnt come back automatically after sending a message, to fix this i need to make separate components for the messagebox and the profile div, with the chat component as the parent. Putting this here for the me of the future that will absolutely forget this</p>
                     <p>Mobile web debugging is so cool, you literally plug an usb and use the desktop to see your screen and browser console, i find it crazy that it works simply with an usb</p>
@@ -203,7 +212,8 @@ function Devlogs(){
             <h1>Blog[?] do desenvolvimento</h1>
             <div id={style.devlog}>
                 <p>Eu acabei escrevendo bastante coisa enquanto estava desenvolvendo o site, como foi tudo em um .txt e é super fácil transferir pra cá, fiz isso. <br /> Vou tentar continuar atualizando as coisas aqui sempre que eu mexer no site.</p>
-                <p>Tá tudo em inglês mas eu pretendo traduzir em breve. Tem algumas coisas censuradas por segurança também <br /> Datas no formato DD/MM/YYYY.</p>
+                <p>Tá tudo em inglês mas eu pretendo traduzir em breve. Tem algumas coisas censuradas por segurança também.</p>
+                <p>Datas no formato DD/MM/YYYY.</p>
                 <DevlogText/>
             </div>
         </div>

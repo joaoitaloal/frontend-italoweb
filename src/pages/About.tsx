@@ -28,8 +28,8 @@ function About(){
                     <li>Make a pong game: <span className={style.notdone}>not done</span></li>
                     <li>Display how many people connected in the chat: <span className={style.done}>done</span></li>
                     <li>Learn databases, sql postgres whatever: <span className={style.done}>done?</span></li>
-                    <li>Make a page for devlogs and eventually create a blog page: <span className={style.notdone}>half done</span></li>
-                    <li>Find a font to use: not done, maybe i could customize one but thats a lot of work: <span className={style.notdone}>not done</span></li>
+                    <li>Make a page for devlogs and eventually create a blog page: <span className={style.done}>done</span></li>
+                    <li>Find a font to use: not done, maybe i could customize one but thats a lot of work: <span className={style.done}>not gonna change it for now so done</span></li>
                     <li>Make random pixel art to populate the background[?]: <span className={style.done}>done</span></li>
                     <li>Change the green color: <span className={style.done}>done, its red now</span></li>
                     <li>Fix background art causing side scrolling on small screens, to be honest thats a gigantic 

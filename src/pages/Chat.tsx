@@ -14,7 +14,7 @@ function Chat(){
         const scroll = useRef(null)
 
         useEffect(() => {
-            /*testing: 
+            /*for testing: 
             setLog([{name: 'teste', message: 'teste', picId: 0, time: '99:99:99',date: '03/10/2024'}])*/
     
             socket.connect();

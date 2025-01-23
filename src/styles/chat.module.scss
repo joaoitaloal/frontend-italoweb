@@ -103,6 +103,9 @@
 
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.295);
 
+    label{
+        margin-right: 5px;
+    }
     input{
         display: inline;
         background-color: rgb(255, 255, 255);
@@ -139,9 +142,8 @@
     }
 }
 #chatbox{
-    display: grid;
     background-color: colors.$beaver;
-    grid-template-rows: 100%;
+    min-height: 200px;
     max-height: 100%;
     overflow: scroll;
 
