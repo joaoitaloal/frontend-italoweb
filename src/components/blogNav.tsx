@@ -3,7 +3,7 @@ import style from "../styles/blog/blognav.module.scss"
 import mainStyle from '../styles/navbar.module.scss';
 import { HomeIcon } from "@radix-ui/react-icons"
 import catIcon from '/iconOutlined.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownNav from "./DropdownNav";
 import { NavLink } from "../lib/interfaces";
 
@@ -12,6 +12,11 @@ export function useAccessibility(){
 }
 
 function BlogNav(){
+
+    useEffect(() =>{
+        fetch('/api/update-visit', {method: 'POST'});
+    },[])
+
     const [nightmode, setNightmode] = useState(false);
     
     function CatIcon(){

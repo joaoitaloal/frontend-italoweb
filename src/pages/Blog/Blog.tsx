@@ -8,8 +8,16 @@ function Blog(){
             <p>DD/MM/YYYY</p>
             <hr />
             <div>
-                <h2>04/01/2025</h2>
-                <h3>Mini texto de apreciação aos pequenos sites pessoais</h3>
+                <h2>25/01/2025 - There are titles now! vocaloid stuff and Bluesky</h2>
+                <p>I feel like writing something so im gonna talk about a little about the new thing im into right now: vocaloid. I was never much into vocaloid but these last days i've been listening to a lot of vocaloid music and got kinda of pulled to the whole thing. The musics are really great, i dont like the themathics on some of them but it is fine, also would love to learn japanese just to understand the lyrics without a translation, might learn it just for this.</p>
+
+                <p>Gonna try moving on to bluesky, twitter is really not great right now and i like the general idea of it(also the people that run it are not nazis or bigots to my knowledge), ideally i should quit social media alltogether but i dont think i have the mental willpower to do that right now. Maybe use it as a mean to write more frequently since my writing is very inconsistent and i never really post anything on twitter.</p>
+                <p><a href="https://@itwebh.bsky.social">@itwebh.bsky.social</a> if you want to take a look.</p>
+
+                <p>Also i've been thinking about moving this entire project to a different github so i can have more freedom, i dont feel very confortable uploading a site where i talk about vocaloid to the github i use to try to find a job, only need the time really to move it somewhere else. Also i would love to make a more serious web server and page to put on the github before doing that.</p>
+            </div>
+            <div>
+                <h2>04/01/2025 - Mini texto de apreciação aos pequenos sites pessoais</h2>
                 <p>Esse vai em português! Desde o começo de 2024 eu desenvolvi um hábito de me jogar na toca de coelho(traduzi termo do inglês desculpa) que são sites pessoais aleatórios. Talvez muita gente não saiba mas tem uma quantidade gigantesca(incontáveis realmente) de sites, tipo esse meu, que são apenas espacinhos virtuais que pessoas usam pra mostrar o que quiser, e explorar eles é uma das coisas mais divertidas que existe.</p>
                 <p>Essa foi inclusive a inspiração inicial pro meu site, apesar de que esse meu não tem muito a vibe de internet antiga que muitos acabam tendo.</p>
                 <h3>O que tem de tão interessante?</h3>
@@ -32,7 +40,7 @@ function Blog(){
                 <p>Enfim era isso, se esse texto um dia inspirar alguém a fazer esse tipo de exploração ou iniciar o próprio site pessoal eu morreria de felicidade, obrigado por ler e tchau.</p>
             </div>
             <div>
-                <h2>02/01/2025</h2>
+                <h2>02/01/2025 - New year and Haibane Renmei</h2>
                 <p>New year lets go, quickly writing here that i finished the anime i mentioned last post, haibane renmei it was very good, might be my favourite audio-visual thing now(even though theres not much competition since i dont watch a lot of things). So yeah i really want to write my thoughts on it someday and i figured that posting this here would make me remember if i forget, im not gonna write it now just out of lazyness honestly.</p>
             </div>
             <div>

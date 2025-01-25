@@ -39,6 +39,11 @@ function About(){
                     that could be useful i think, should look into it: <span className={style.done}>not a priority, marking as done</span></li>
                 </ul>
             </div>
+            <div id={style.contactinfo}>
+                <label>Contato:</label>
+                <p>Bluesky: <a href="https://@itwebh.bsky.social">@itwebh.bsky.social</a></p>
+                <p>Email: #####</p> {/* ToDo: Decidir que email colocar aqui */}
+            </div>
         </div>
     )
 }

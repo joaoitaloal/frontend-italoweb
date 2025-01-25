@@ -29,7 +29,11 @@ function BackgroundImgs(props: any){
 }
 
 function NavBar() {
-    const [darkbg, setDarkbg] = useState(false);
+    const [darkbg, setDarkbg] = useState(false); // i dont think this is being used anymore? i need to check
+
+    useEffect(() =>{
+        fetch('/api/update-visit', {method: 'POST'});
+    },[])
 
     useEffect(() =>{
         document.body.style.backgroundColor = darkbg?'black':'initial';

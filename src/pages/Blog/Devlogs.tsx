@@ -9,6 +9,11 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>25/01/2025</h2>
+                    <p>Fixed a bug with the chat page on mobile and an old bug i tested only now on the calculator project.</p>
+                    <p>I dont know since when this mobile bug was there, i suspect it is from the design change that i did a long time ago so thats pretty bad on my part, really no idea how i did not noticed it earlier, but yeah everything working now!</p>
+                </div>
+                <div>
                     <h2>02/01/2025</h2>
                     <p>2025!! There is a clear lack of anything from me here, that is because i spent a long time doing things for college and have not worked on any personal project for some time, but i started one and want to put some things about it here.</p>
                     <p>The project is a 3D renderer/raytracer, you can check it on <a href="https://github.com/joaoitaloal/3DRenderer">my github</a>, it is currently made using SDL2(probably gonna change it to SDL3), check the readme for more details since thats not what im here for.</p>
