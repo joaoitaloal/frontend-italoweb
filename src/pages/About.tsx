@@ -41,7 +41,7 @@ function About(){
             </div>
             <div id={style.contactinfo}>
                 <label>Contato:</label>
-                <p>Bluesky: <a href="https://@itwebh.bsky.social">@itwebh.bsky.social</a></p>
+                <p>Bluesky: <a href="https://bsky.app/profile/italowebhome.xyz">@italowebhome.xyz</a></p>
                 <p>Email: #####</p> {/* ToDo: Decidir que email colocar aqui */}
             </div>
         </div>

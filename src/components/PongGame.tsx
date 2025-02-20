@@ -1,4 +1,3 @@
-import { Application, Graphics, Sprite, Text, Texture } from 'pixi.js';
 import { useEffect } from 'react';
 import style from '../styles/pongGame.module.scss';
 import { Socket } from 'socket.io-client';
@@ -10,55 +9,57 @@ interface pongGameProps {
 }
 
 function PongGame(props: pongGameProps){
-    const app = new Application();
-    let socket = props.socket;
-    let keys = new Set(["ArrowUp", "ArrowDown", "w", "s"]);
-
-    const PlayerRed = new Sprite(Texture.WHITE);
-    const PlayerBlue = new Sprite(Texture.WHITE);
-    const Ball = new Graphics().circle(400/2, 180/2, 5);
-    const Scoreboard = new Text({text: "0x0", style: {fill: 0xffffff}}); 
-    //const touchHitbox = new Polygon(0,0, 0,180, 400,180, 400,0);
-
-    function initGame(){
-        
-        let gameWidth = app.canvas.width;
-        let gameHeight = app.canvas.height;
-
-        Scoreboard.x = 0;
-        Scoreboard.y = 0;
-        app.stage.addChild(Scoreboard);
-
-        PlayerRed.height = 40;
-        PlayerRed.width = 10;
-        PlayerRed.tint = 0xff0000;
-
-        PlayerRed.x = gameWidth / 8;
-        PlayerRed.y = gameHeight / 2;
     
-        PlayerRed.anchor.x = 0.5;
-        PlayerRed.anchor.y = 0.5;
-    
-        app.stage.addChild(PlayerRed);
-
-        PlayerBlue.height = 40;
-        PlayerBlue.width = 10;
-        PlayerBlue.tint = 0x0000ff;
-
-        PlayerBlue.x = 7*gameWidth / 8;
-        PlayerBlue.y = gameHeight / 2;
-    
-        PlayerBlue.anchor.x = 0.5;
-        PlayerBlue.anchor.y = 0.5;
-    
-        app.stage.addChild(PlayerBlue);
-
-        Ball.fill(0xffffff);
-
-        app.stage.addChild(Ball);
-    }
-
     useEffect(() => {
+        if(!window.PIXI) return;
+        let pixi = window.PIXI;
+        const app = new pixi.Application();
+        let socket = props.socket;
+        let keys = new Set(["ArrowUp", "ArrowDown", "w", "s"]);
+
+        const PlayerRed = new pixi.Sprite(pixi.Texture.WHITE);
+        const PlayerBlue = new pixi.Sprite(pixi.Texture.WHITE);
+        const Ball = new pixi.Graphics().circle(400/2, 180/2, 5);
+        const Scoreboard = new pixi.Text({text: "0x0", style: {fill: 0xffffff}}); 
+        //const touchHitbox = new Polygon(0,0, 0,180, 400,180, 400,0);
+
+        function initGame(){
+            
+            let gameWidth = app.canvas.width;
+            let gameHeight = app.canvas.height;
+
+            Scoreboard.x = 0;
+            Scoreboard.y = 0;
+            app.stage.addChild(Scoreboard);
+
+            PlayerRed.height = 40;
+            PlayerRed.width = 10;
+            PlayerRed.tint = 0xff0000;
+
+            PlayerRed.x = gameWidth / 8;
+            PlayerRed.y = gameHeight / 2;
+        
+            PlayerRed.anchor.x = 0.5;
+            PlayerRed.anchor.y = 0.5;
+        
+            app.stage.addChild(PlayerRed);
+
+            PlayerBlue.height = 40;
+            PlayerBlue.width = 10;
+            PlayerBlue.tint = 0x0000ff;
+
+            PlayerBlue.x = 7*gameWidth / 8;
+            PlayerBlue.y = gameHeight / 2;
+        
+            PlayerBlue.anchor.x = 0.5;
+            PlayerBlue.anchor.y = 0.5;
+        
+            app.stage.addChild(PlayerBlue);
+
+            Ball.fill(0xffffff);
+
+            app.stage.addChild(Ball);
+        }
         function updateGame(info: PongInfo){
             app.ticker.addOnce(() => {
                 PlayerBlue.y = info.playerBlueY;
@@ -94,7 +95,8 @@ function PongGame(props: pongGameProps){
             window.removeEventListener("keyup", handleKeyUp)
         }
     },[])
-
+    
+    if(!window.PIXI) return <div>Carregando Pixijs...</div>
     return(
         <>        
             <div id="Pong" className={style.pong}>

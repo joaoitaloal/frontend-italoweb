@@ -9,6 +9,11 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>28/01/2025</h2>
+                    <p>There is a weird bug on the backend that happens from time to time, it basically ends up looping a process and the server stops doing anything else.</p>
+                    <p>Saving this here so that i dont forget to fix it, still have to discover what is causing it tho.</p>
+                </div>
+                <div>
                     <h2>25/01/2025</h2>
                     <p>Fixed a bug with the chat page on mobile and an old bug i tested only now on the calculator project.</p>
                     <p>I dont know since when this mobile bug was there, i suspect it is from the design change that i did a long time ago so thats pretty bad on my part, really no idea how i did not noticed it earlier, but yeah everything working now!</p>
