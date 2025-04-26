@@ -76,7 +76,7 @@ function Chat(){
                         {log.map((message) => {
                             return(
                                 <div className={style.message} onLoad={() =>{
-                                    //@ts-ignore  look what is the correct type to use here if i have time
+                                    //@ts-expect-error  look what is the correct type to use here if i have time
                                     scroll.current?.scrollIntoView()
                                 }}>
                                     <img src={getProfilePic(message.picId)} alt="Foto de perfil" />
@@ -123,7 +123,7 @@ function Chat(){
             }else if(message == ''){
                 window.alert('Insira uma mensagem!')
             }else{
-                let date = new Date;
+                const date = new Date;
                 try{
                     socket.emit('message', 
                         {

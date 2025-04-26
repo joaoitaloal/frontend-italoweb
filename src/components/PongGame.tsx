@@ -9,13 +9,12 @@ interface pongGameProps {
 }
 
 function PongGame(props: pongGameProps){
-    
     useEffect(() => {
         if(!window.PIXI) return;
-        let pixi = window.PIXI;
+        const pixi = window.PIXI;
         const app = new pixi.Application();
-        let socket = props.socket;
-        let keys = new Set(["ArrowUp", "ArrowDown", "w", "s"]);
+        const socket = props.socket;
+        const keys = new Set(["ArrowUp", "ArrowDown", "w", "s"]);
 
         const PlayerRed = new pixi.Sprite(pixi.Texture.WHITE);
         const PlayerBlue = new pixi.Sprite(pixi.Texture.WHITE);
@@ -25,8 +24,8 @@ function PongGame(props: pongGameProps){
 
         function initGame(){
             
-            let gameWidth = app.canvas.width;
-            let gameHeight = app.canvas.height;
+            const gameWidth = app.canvas.width;
+            const gameHeight = app.canvas.height;
 
             Scoreboard.x = 0;
             Scoreboard.y = 0;

@@ -17,5 +17,5 @@ export interface PongInfo{
     playerBlueY: number,
     ballX: number,
     ballY: number,
-    scoreboard: String
+    scoreboard: string
 }
