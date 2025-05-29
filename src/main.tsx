@@ -39,11 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "renderer",
-        element: <Renderer/>
+        element: <p>Em construção!</p>
       },
       {
         path: "test",
-        element: <h1>test</h1>
+        element: <Renderer/>
       }
     ],
   },{
