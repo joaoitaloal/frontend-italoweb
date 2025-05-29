@@ -17,3 +17,34 @@
     
     scrollbar-gutter: stable;
 }
+@media (max-width: 767px) {
+    #blog{
+        width: calc(100% - 20px);
+    }
+}
+
+#essaysList{
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    row-gap: 5px;
+
+    p{
+        display: inline-block
+    }
+}
+.essayLink{
+    color: white;
+    width: 30%;
+    height: 38px;
+
+    div{
+        height: 38px;
+        text-align: center;
+
+        background: #712675;
+        background: linear-gradient(90deg,rgba(113, 38, 117, 1) 26%, rgba(8, 2, 61, 1) 100%);
+    }
+}

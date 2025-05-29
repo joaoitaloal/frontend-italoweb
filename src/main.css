@@ -8,7 +8,9 @@
     background-color: black;
     background-image: url('/backgroundtile.png');
 }*/
-
+html{
+    overflow: hidden;
+}
 body{
     padding: 0;
     margin: 0;

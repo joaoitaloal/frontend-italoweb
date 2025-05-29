@@ -9,10 +9,11 @@ import Chat from './pages/Chat.tsx';
 import About from './pages/About.tsx';
 import Blog from './pages/Blog/Blog.tsx';
 import Devlogs from './pages/Blog/Devlogs.tsx';
-import Philosophy from './pages/Blog/Philosophy.tsx';
 import BlogNav from './components/blogNav.tsx';
 import './main.css'
-import Venting from './pages/Blog/Venting.tsx';
+import Microblogs from './pages/Blog/essays/microblogs.tsx';
+import AnalisePD from './pages/Blog/essays/analisePD.tsx';
+import Renderer from './pages/Renderer.tsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         element: <About/>
       },
       {
+        path: "renderer",
+        element: <Renderer/>
+      },
+      {
         path: "test",
         element: <h1>test</h1>
       }
@@ -54,12 +59,17 @@ const router = createBrowserRouter([
         element: <Devlogs/>
       },
       {
-        path: "philosophy",
-        element: <Philosophy/>
-      },
-      {
-        path: "venting",
-        element: <Venting/>
+        path: "essays",
+        children: [
+            {
+                path: "microblogs",
+                element: <Microblogs/>
+            },
+            {
+                path: "AnalisePD",
+                element: <AnalisePD/>
+            }
+        ]
       }
     ]
   }

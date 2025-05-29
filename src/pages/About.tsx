@@ -25,8 +25,8 @@ function About(){
                     <li>Make an english translation, still need to think how i will do it: <span className={style.notdone}>not done</span></li>
                     <li>About page: <span className={style.done}>done</span></li>
                     <li>Set a schedule: <span className={style.done}>done</span></li>
-                    <li>Make a pong game: <span className={style.notdone}>not done</span></li>
-                    <li>Display how many people connected in the chat: <span className={style.done}>done</span></li>
+                    <li>Make a pong game: <span className={style.done}>done</span></li>
+                    <li>Display how many people are connected in the chat: <span className={style.done}>done</span></li>
                     <li>Learn databases, sql postgres whatever: <span className={style.done}>done?</span></li>
                     <li>Make a page for devlogs and eventually create a blog page: <span className={style.done}>done</span></li>
                     <li>Find a font to use: not done, maybe i could customize one but thats a lot of work: <span className={style.done}>not gonna change it for now so done</span></li>

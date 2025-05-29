@@ -51,7 +51,11 @@ function NavBar() {
                                 <Link className={style.navItem} to='/'><HomeIcon className={style.icon}/>Home</Link>
                                 <Link className={style.navItem} to='message'><EnvelopeClosedIcon className={style.icon}/>Mensagem</Link>
                                 <Link className={style.navItem} to='chat'><ChatBubbleIcon className={style.icon}/>Chat</Link>
-                                <DropdownNav itens={[{name: "Sobre", link: "about"}, {name:"Blog", link: "/blog"}] satisfies NavLink[]}/>
+                                <DropdownNav itens={[
+                                    {name: "Sobre", link: "about"},
+                                    {name: "Renderizador", link: "renderer"},
+                                    {name:"Blog", link: "/blog"}
+                                    ] satisfies NavLink[]}/>
                                 <a className={style.navItem} href='/calculator'>Calculadora↗</a>
                             </nav>
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
@@ -74,6 +78,7 @@ function NavBar() {
                                 {name: "Mensagem", link: "message"},
                                 {name: "Chat", link: "chat"},
                                 {name: "Sobre", link: "about"},
+                                {name: "Renderizador", link: "renderer"},
                                 {name:"Blog", link: "/blog"},
                                 {name: "Calculadora", link: "/calculator"}
                                 ] satisfies NavLink[]}/>

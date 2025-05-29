@@ -38,7 +38,6 @@ function App(){
           <p>Bluesky: <a href="https://bsky.app/profile/italowebhome.xyz">@italowebhome.xyz</a></p>
           <p>Email: #####</p> {/* ToDo: Decidir que email colocar aqui */}
       </div>
-      <p id={style.construction}>Site em construção!</p>
     </div>
   )
 }

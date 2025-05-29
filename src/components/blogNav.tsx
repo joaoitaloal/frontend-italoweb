@@ -31,8 +31,7 @@ function BlogNav(){
                     <a className={mainStyle.navItem} href="/"><HomeIcon className={mainStyle.icon}/>Home</a>
                     <DropdownNav itens={[
                         {name: "Blog", link: ""},
-                        {name: "Desenvolvimento", link: "dev"},
-                        {name: "Filosofia", link: "philosophy"}
+                        {name: "Desenvolvimento", link: "dev"}
                     ] satisfies NavLink[]}/>
                 </nav>
             )
@@ -42,7 +41,6 @@ function BlogNav(){
                 <a className={mainStyle.navItem} href="/"><HomeIcon className={mainStyle.icon}/>Home</a>
                 <Link className={mainStyle.navItem} to="">Blog</Link>
                 <Link className={mainStyle.navItem} to="dev">Desenvolvimento</Link>
-                <Link className={mainStyle.navItem} to="philosophy">Filosofia</Link>
             </nav>
         )
     }
