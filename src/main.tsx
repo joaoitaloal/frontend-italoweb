@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createBrowserRouter, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import App from './pages/App.tsx'
 import NavBar from './components/NavBar.tsx';
@@ -39,11 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "renderer",
-        element: <p>Em construção!</p>
+        element: <Renderer/>
       },
       {
         path: "test",
-        element: <Renderer/>
+        element: <p>Nada sendo testado</p>
       }
     ],
   },{

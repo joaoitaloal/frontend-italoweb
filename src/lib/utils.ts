@@ -57,26 +57,21 @@ export function shaderMap(){
     let shader = new Map();
     shader.set('blur', 
         "if(x > 0 && x <= WIDTH-1 && y > 0 && y < HEIGHT-1){\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x-1, y-1, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x-1, y, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x, y-1, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x-1, y+1, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x+1, y-1, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x+1, y, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x, y+1, WIDTH));\n"+
-            "   sumnPixels(pixelcolors, i, getIndex(x+1, y+1, WIDTH));\n"+
-            "   pixelcolors[i+1] = pixelcolors[i+1]/9;\n"+
-            "   pixelcolors[i+2] = pixelcolors[i+2]/9;\n"+
-            "   pixelcolors[i+3] = pixelcolors[i+3]/9;\n"+
+            "   somarPixels(pixelcolors, x, y, x-1, y-1);\n"+
+            "   somarPixels(pixelcolors, x, y, x-1, y);\n"+
+            "   somarPixels(pixelcolors, x, y, x, y-1);\n"+
+            "   somarPixels(pixelcolors, x, y, x-1, y+1);\n"+
+            "   somarPixels(pixelcolors, x, y, x+1, y-1);\n"+
+            "   somarPixels(pixelcolors, x, y, x+1, y);\n"+
+            "   somarPixels(pixelcolors, x, y, x, y+1);\n"+
+            "   somarPixels(pixelcolors, x, y, x+1, y+1);\n"+
         "}"
     )
     shader.set('whitebg', 
-        "if(pixelcolors[i+1] == 0 &&\n" +
-         "pixelcolors[i+2] == 0 &&\n" +
-         "pixelcolors[i+3] == 0){\n"+
-            "   pixelcolors[i+1] = 1;\n"+
-            "   pixelcolors[i+2] = 1;\n"+
-            "   pixelcolors[i+3] = 1;\n"+
+        "if(pixelcolors[atualVermelho] == 0 &&\n" +
+         "pixelcolors[atualVerde] == 0 &&\n" +
+         "pixelcolors[atualAzul] == 0){\n"+
+            "   mudarPixelRGB(pixelcolors, x, y, 1, 1, 1);\n"+
         "}"
     )
 

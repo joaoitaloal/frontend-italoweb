@@ -19,7 +19,6 @@ function BackgroundImgs(props: any){
     if(props.darkbg){return(<></>)}
     return(
         <>
-            {/*<div id={style.test}></div>*/}
             <img id={style.gamepad} src={gamepadImg} alt="Gamepad pixel art"/>
             <img id={style.guitar} src={guitarImg} alt="Guitar pixel art"/>
             <img id={style.ghost} src={ghostImg} alt="Ghost pixel art"/>

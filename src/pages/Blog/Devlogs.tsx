@@ -12,6 +12,7 @@ function Devlogs(){
                     <h2>28/01/2025</h2>
                     <p>There is a weird bug on the backend that happens from time to time, it basically ends up looping a process and the server stops doing anything else.</p>
                     <p>Saving this here so that i dont forget to fix it, still have to discover what is causing it tho.</p>
+                    <p>Coming from the future to say that this got fixed by itself which is scary but ill take it.</p>
                 </div>
                 <div>
                     <h2>25/01/2025</h2>
