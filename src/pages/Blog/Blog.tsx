@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import style from '../../styles/blog/blog.module.scss';
 
 function Blog(){
+    /*let context = useOutletContext<{
+        setTheme: React.Dispatch<React.SetStateAction<string>>, 
+        theme: string
+    }>();*/
+    
     return(
         <div id={style.blog}>
             <h1>Blog</h1>
@@ -17,8 +22,17 @@ function Blog(){
             </div>
             <hr />
             <div>
+                <h2>30/07/2025 - Faculdade e fim de semestre</h2>
+                <p>Mais dois meses passaram, muita coisa rolou, muita coisa não rolou, e o semestre da faculdade acabou então eu tou bem livre, e feliz, e livre, por isso tou tirando tempo pra escrever aqui.</p>
+                <p>Algo que eu nunca tinha percebido e tou vendo agora é que nunca escrevi sobre a faculdade aqui, o que é surpreendente já que ela é uns 80% da minha vida, não sei de onde tirei assunto pra escrever sobre outras coisas(não tirei né, posto coisa a cada dois meses). Sempre evitei postar coisas muito pessoais aqui por que nunca me senti muito a vontade e provavelmente por isso nunca cheguei a falar sobre faculdade, mas vamo lá né vou falar algumas coisas legais que rolaram esse semestre.</p>
+                <p>Primeira coisa legal que vem em mente foi participar da feira de profissões da UFC, nunca imaginaria que ficar 5 horas em pé falando com aluno do ensino médio poderia ser uma experiência tão boa, foi algo muito massa sair falando sobre o curso e ver o brilho nos olhos de algumas pessoas. Fiz até uma <a href="/renderer">adição no site</a> pra mostrar lá, foi bem legal já que uma galera se interessou(pensei que ninguém ia nem entender o que tava na tela).</p>
+                <p>Mais coisas legais rolaram mas fiquei com preguiça de escrever, fica pra próxima.</p>
+                <p>Eu tenho um monte de textos guardados sobre algumas coisas, umas bem pessoais, outras só pensamentos soltos, de vez em quando eu penso se solto uns aqui ou não, já até comentei sobre esses textos aqui na real, vou ver se pego uma seleção dos que menos me fazem parecer ter depressão profunda e ver se coloco aqui.</p>
+                <p>Eu acabei o ultimo post falando sobre uma página de essays, coisa que eu fiz, não demorou nem meia hora pra fazer então seria impressionante se em 2 meses eu não tivesse feito. O que eu não fiz foi escrever algum essay lá(além de mover o que eu já tinha feito antes), então vou aproveitar essa tradição recém criada de acabar os posts com um anuncio/promesssa pra prometer que vou fazer pelo menos mais um essay/texto grande nesse mês! é isso, tchau tchau!</p>
+            </div>
+            <div>
                 <h2>26/05/2025 - Meu Deus o tempo passa rápido</h2>
-                <p>Eu nunca esperei escrever aqui frequêntemente, mas quatro meses é muito tempo, tanto tempo que eu vou listar tudo que eu fiz em quatro meses:</p>
+                <p>Eu nunca esperei escrever aqui frequentemente, mas quatro meses é muito tempo, tanto tempo que eu vou listar tudo que eu fiz em quatro meses:</p>
                 <ul><li></li></ul>
                 <p>Legal.</p>
                 <p>Brincadeiras a parte, eu não escrevo nada aqui tem um tempo por falta do que escrever realmente, eu até fiz umas atualizações no backend mas esqueci total de colocar no blog de desenvolvimento.</p>

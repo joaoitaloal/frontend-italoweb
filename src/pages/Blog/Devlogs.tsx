@@ -9,6 +9,12 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>30/07/2025</h2>
+                    <p>Added an entire new page and did not write anything about it or the process of creating it here, good job man you are great at doing this log thing.</p>
+                    <p>Quick summary here: Added a page to host my 3D rendering project that i mentioned some posts before, you can access it <a href="/renderer">here</a>, it was a very fun project to do, i showed it at a fair("career fair"? "job fair"?) on my college and got some pretty cool reactions to it so again it was very fun, maybe ill talk more about it on the blog page, sticking to technical details here.</p>
+                    <p>So basically the renderer is still the same from before, it is just hosted on my machine, i have some preventions on place so users cant destroy my machine and thats it(there is probably some fuckup i did somewhere and if you try enough you can probably destroy my machine anyway, if you do please take some notes on how you did it and send me, apologies for destroying my pc would be cool too if you can).</p>
+                </div>
+                <div>
                     <h2>28/01/2025</h2>
                     <p>There is a weird bug on the backend that happens from time to time, it basically ends up looping a process and the server stops doing anything else.</p>
                     <p>Saving this here so that i dont forget to fix it, still have to discover what is causing it tho.</p>

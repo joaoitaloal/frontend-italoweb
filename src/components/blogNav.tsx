@@ -7,17 +7,16 @@ import { useEffect, useState } from "react";
 import DropdownNav from "./DropdownNav";
 import { NavLink } from "../lib/interfaces";
 
-export function useAccessibility(){
-    return useOutletContext<React.Dispatch<React.SetStateAction<boolean>>>()
+export function getDarkThemeSetter(){
+    return useOutletContext<React.Dispatch<React.SetStateAction<string>>>()
 }
 
 function BlogNav(){
-
     useEffect(() =>{
         fetch('/api/update-visit', {method: 'POST'});
     },[])
 
-    const [nightmode, setNightmode] = useState(false);
+    const [nightmode, setNightmode] = useState("light");
     
     function CatIcon(){
         if(window.matchMedia("(max-width: 1365px)").matches)
@@ -49,10 +48,13 @@ function BlogNav(){
             <div id={style.navbar}>
                 <CatIcon/>
                 <NavBar/>
-                <button onClick={() => setNightmode(prev => !prev)}>Modo escuro</button>
+                <button onClick={() => setNightmode((prev) =>{
+                    if(prev == "light") return "dark";
+                    return "light";
+                })}>Modo escuro</button>
             </div>
-            <div id={style.blogBody} style={{backgroundColor: nightmode?'black':'white', color: nightmode?'white':'black'}}>
-                <Outlet context={setNightmode satisfies React.Dispatch<React.SetStateAction<boolean>>}/>
+            <div id={style.blogBody} className={style[nightmode]}>
+                <Outlet context={{setTheme: setNightmode, theme: nightmode} satisfies {setTheme: React.Dispatch<React.SetStateAction<string>>, theme: string}}/>
             </div>
             <footer id={style.footer}>
                 Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a> <br />
