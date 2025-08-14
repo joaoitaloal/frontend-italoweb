@@ -1,5 +1,6 @@
 import style from '../styles/app.module.scss'
 import styleabout from '../styles/about.module.scss'
+import { Link } from 'react-router-dom'
 
 function App(){
   function AvisoMobile(){
@@ -21,21 +22,14 @@ function App(){
       <AvisoMobile/>
       <div id={styleabout.about}>
         <div style={{margin: '0px auto 10px', display: 'block'}} id={styleabout.aboutbox}>
-            <h2>Sobre</h2>
-            <p>
-                Olá! meu nome é Ítalo e esse site é meu site pessoal, vou usar ele pra aprender coisas sobre web e talvez colocar qualquer coisa que eu tiver afim de vez em quando, não espere nada de muito especial nem elaborado, é realmente o que eu quiser quando eu quiser!
-            </p>
-            <p>
-                O site não vai estar sempre funcionando, pelo menos por enquanto. Provavelmente vou manter ele funcionando de noite das 18 as 22 horas, é pouco tempo mas po não tem muita coisa pra ver aqui. 
-            </p>
-            <p>
-                Dito isso, fique a vontade para mandar perguntas ou qualquer coisa na página de mensagens ou qualquer outro lugar que você consiga me encontrar
-            </p>
+            <h2>Bem vindo!</h2>
+            <p>Oioi visitante, meu nome é Ítalo, o criador e dono desse site aqui, sinta-se livre pra dar uma olhada por aí nas outras páginas. Se divirta!!</p>
+            <p>Recomendo olhar o <Link to={'/blog'}>Blog</Link>, é a parte do site onde eu faço uns posts(com uma frequencia bem duvidosa) sobre qualquer coisa que tiver na minha mente no momento, é o lugar do site que eu mais atualizo atualmente então fica a sugestão.</p>
         </div>
       </div>
       <div id={styleabout.contactinfo}>
         <label>Contato:</label>
-          <p>Bluesky: <a href="https://bsky.app/profile/italowebhome.xyz">@italowebhome.xyz</a></p>
+          <p>Bluesky: <a target='_blank' href="https://bsky.app/profile/italowebhome.xyz">@italowebhome.xyz</a></p>
           <p>Email: #####</p> {/* ToDo: Decidir que email colocar aqui */}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { SceneInfo } from "./classes";
 
-export function getConfig(data: object | string, method = 'post', url = '/diary/messages'){
+export function getConfig(data: object | string, method = 'post', url = '/api/diary'){
     return {
       method: method,
       maxBodyLength: 5000,

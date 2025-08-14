@@ -18,6 +18,7 @@ function Blog(){
                 <div id={style.essaysList}>
                     <Link className={style.essayLink} to={"./essays/microblogs"}><div>Texto sobre microblogs</div></Link>
                     <Link className={style.essayLink} to={"./essays/AnalisePD"}><div>Análise/opiniões sobre o álbum Plastic Death</div></Link>
+                    <Link className={style.essayLink} to={"./essays/Rascunhos"}><div>Rascunhos e textos ruins</div></Link>
                 </div>
             </div>
             <hr />

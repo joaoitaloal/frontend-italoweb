@@ -14,6 +14,7 @@ import './main.css'
 import Microblogs from './pages/Blog/essays/microblogs.tsx';
 import AnalisePD from './pages/Blog/essays/analisePD.tsx';
 import Renderer from './pages/Renderer.tsx';
+import Rascunhos from './pages/Blog/essays/Rascunhos.tsx';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
             {
                 path: "AnalisePD",
                 element: <AnalisePD/>
+            },
+            {
+                path: "Rascunhos",
+                element: <Rascunhos/>
             }
         ]
       }
