@@ -23,6 +23,7 @@ function App(){
       <div id={styleabout.about}>
         <div style={{margin: '0px auto 10px', display: 'block'}} id={styleabout.aboutbox}>
             <h2>Bem vindo!</h2>
+            <p>O site está passando por reformas! espere encontrar algumas coisas quebradas.</p>
             <p>Oioi visitante, meu nome é Ítalo, o criador e dono desse site aqui, sinta-se livre pra dar uma olhada por aí nas outras páginas. Se divirta!!</p>
             <p>Recomendo olhar o <Link to={'/blog'}>Blog</Link>, é a parte do site onde eu faço uns posts(com uma frequencia bem duvidosa) sobre qualquer coisa que tiver na minha mente no momento, é o lugar do site que eu mais atualizo atualmente então fica a sugestão.</p>
         </div>

@@ -7,7 +7,7 @@ import guitarImg from '/guitar.png';
 import ghostImg from '/ghost.png';
 import rghostImg from '/realghost.png'
 import DropdownNav from "./DropdownNav";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NavLink } from "../lib/interfaces";
 
 //Remove background
@@ -28,21 +28,15 @@ function BackgroundImgs(props: any){
 }
 
 function NavBar() {
-    const [darkbg, setDarkbg] = useState(false); // i dont think this is being used anymore? i need to check
 
     useEffect(() =>{
         fetch('/api/update-visit', {method: 'POST'});
     },[])
 
-    useEffect(() =>{
-        document.body.style.backgroundColor = darkbg?'black':'initial';
-        document.body.style.backgroundImage = darkbg?'none':'initial';
-    },[darkbg])
-
     if(!window.matchMedia("(max-width: 1365px)").matches){
         return (
             <div id={style.mainRoot}>
-                <BackgroundImgs darkbg={darkbg}/>
+                <BackgroundImgs/>
                 <div id={style.window}>
                     <div id={style.navbar}>
                         <Link to='/'><img src={catIcon} alt="Icon" /></Link>
@@ -60,7 +54,7 @@ function NavBar() {
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
                     </div>
                     <div id={style.scrollableContent}>
-                        <Outlet context={setDarkbg satisfies React.Dispatch<React.SetStateAction<boolean>>}/>
+                        <Outlet/>
                     </div>
                 </div>
             </div>
@@ -85,7 +79,7 @@ function NavBar() {
                         <footer id={style.footer}>Criado por <a href="https://github.com/joaoitaloal" target="_blank">Italo!↗</a></footer>
                     </div>
                     <div id={style.scrollableContent}>
-                        <Outlet context={setDarkbg satisfies React.Dispatch<React.SetStateAction<boolean>>}/>
+                        <Outlet/>
                     </div>
                 </div>
             </div>

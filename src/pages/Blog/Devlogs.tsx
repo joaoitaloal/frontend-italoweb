@@ -9,6 +9,10 @@ function Devlogs(){
             return(
                 <>
                 <div>
+                    <h2>14/08/2025</h2>
+                    <p>CSS is the worst thing humanity ever created.</p>
+                </div>
+                <div>
                     <h2>31/07/2025</h2>
                     <p>Changed the entire backend to typescript while also making a lot of old code work better, pretty good change i think.</p>
                     <p>Planning to stop using an ORM and instead i might try to use straight SQL.</p>
